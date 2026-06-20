@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="tour_details_title">Tur Detayları | Alanya VIP Yacht</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="detay-style.css">
+</head>
+<body>
+
+    <div id="preloader"><div class="loader-logo">INFINITY YACHT</div></div>
+
+    <header id="header">
+        <a href="index.html" class="logo">INFINITY YACHT</a>
+        <nav class="navbar">
+            <a href="index.html" data-translate="nav_home">Ana Sayfa</a>
+            <a href="index.html#tours" data-translate="nav_tours">Turlarımız</a>
+            <a href="index.html#yacht" data-translate="nav_yacht">Yatımız</a>
+            <a href="index.html#contact" data-translate="nav_contact">İletişim</a>
+        </nav>
+        <div class="header-right">
+             <div class="language-switcher">
+                <a href="#" class="lang-btn" data-lang="tr"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/tr.svg" alt="Türkçe"></a>
+                <a href="#" class="lang-btn" data-lang="en"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/gb.svg" alt="English"></a>
+                <a href="#" class="lang-btn" data-lang="ru"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/ru.svg" alt="Русский"></a>
+            </div>
+            <div id="menu-bars" class="fas fa-bars"></div>
+        </div>
+    </header>
+
+    <main class="tour-detail-page">
+        <section id="tour-hero"><h1 id="tour-title" data-translate-dynamic="title">Tur Adı Yükleniyor...</h1></section>
+
+        <section class="section-padding">
+            <div class="detail-container">
+                <div class="detail-left">
+                    <div class="gallery-main-image">
+                        <img id="main-tour-image" src="" alt="Tur Resmi">
+                    </div>
+                    <div id="gallery-thumbnails" class="gallery-thumbnails">
+                        </div>
+                </div>
+                <div class="detail-right">
+                    <h2 data-translate="tour_description_title">Tur Açıklaması</h2>
+                    <p id="tour-description" data-translate-dynamic="description">Açıklama yükleniyor...</p>
+                    
+                    <h3 data-translate="tour_includes_title">Tura Dahil Olanlar</h3>
+                    <ul id="tour-includes" class="includes-list" data-translate-dynamic-list="includes"></ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="booking">
+            <div class="booking-content">
+                <h2 data-translate="booking_title">Rezervasyon ve Bilgi</h2>
+                <p data-translate="booking_text">Bu eşsiz deneyimi yaşamak ve yerinizi ayırtmak için bize hemen ulaşın!</p>
+                <div class="booking-buttons">
+                    <a id="whatsapp-link" href="#" class="btn-booking whatsapp"><i class="fab fa-whatsapp"></i> <span data-translate="booking_whatsapp_btn">WhatsApp'tan Ulaş</span></a>
+                    <a id="phone-link" href="#" class="btn-booking phone"><i class="fas fa-phone"></i> <span data-translate="booking_phone_btn">Telefonla Ara</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="cookie-banner">
+        <p data-translate="cookie_text">Size daha iyi hizmet sunabilmek için sitemizde çerezler kullanıyoruz.</p>
+        <button id="accept-cookies" class="btn" data-translate="cookie_button">Kabul Et</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
