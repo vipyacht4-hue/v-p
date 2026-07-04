@@ -541,3 +541,39 @@ body {
         font-size: 50%;
     }
 }
+
+/* WhatsApp Styles */
+.whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    color: #fff;
+}
+
+.btn-whatsapp {
+    background-color: #25d366 !important;
+    color: #fff !important;
+    border-color: #25d366 !important;
+}
+
+.btn-whatsapp:hover {
+    background-color: #128c7e !important;
+    border-color: #128c7e !important;
+}
