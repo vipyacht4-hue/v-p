@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="blog_detail_site_title">Blog Detayı | Alanya VIP Yacht</title>
+    <meta name="description" data-translate="blog_detail_site_description" content="Alanya yat turu blog detayı.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="detay-style.css">
+</head>
+<body>
+
+    <div id="preloader"><div class="loader-logo">INFINITY YACHT</div></div>
+
+    <header id="header">
+        <a href="index.html" class="logo">INFINITY YACHT</a>
+        <nav class="navbar">
+            <a href="index.html#hero" data-translate="nav_home">Ana Sayfa</a>
+            <a href="index.html#tours" data-translate="nav_tours">Turlarımız</a>
+            <a href="index.html#yacht" data-translate="nav_yacht">Yatımız</a>
+            <a href="blog.html" data-translate="nav_blog" class="active">Blog</a>
+            <a href="index.html#contact" data-translate="nav_contact">İletişim</a>
+        </nav>
+        <div class="header-right">
+            <div class="language-switcher">
+                <a href="#" class="lang-btn" data-lang="tr"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/tr.svg" alt="Türkçe"></a>
+                <a href="#" class="lang-btn" data-lang="en"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/gb.svg" alt="English"></a>
+                <a href="#" class="lang-btn" data-lang="ru"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/ru.svg" alt="Русский"></a>
+            </div>
+            <div id="menu-bars" class="fas fa-bars"></div>
+        </div>
+    </header>
+
+    <section class="tour-detail-header" id="blog-header-bg" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('GÖRSELLER/blog-vip-yacht.png');">
+        <div class="header-content">
+            <h1 id="blog-title">Blog Başlığı</h1>
+            <p id="blog-date" style="font-family: 'Roboto', sans-serif; opacity: 0.8; margin-top: 10px;"><i class="far fa-calendar-alt"></i> 14 Temmuz 2026</p>
+        </div>
+    </section>
+
+    <section class="tour-content-section section-padding">
+        <div class="container">
+            <div class="blog-article-content" id="blog-content">
+                <!-- Blog content injected via JS -->
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="blog.html" class="btn btn-outline" data-translate="back_to_blog"><i class="fas fa-arrow-left"></i> Tüm Yazılara Dön</a>
+                <a href="https://wa.me/905558082727" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Rezervasyon Yap</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <h3 data-translate="contact_title">Bize Ulaşın</h3>
+            <p data-translate="contact_text">Hayalinizdeki turu planlamak için bizimle iletişime geçin.</p>
+            <ul class="socials">
+                <li><a href="https://www.instagram.com/infinityyacht1" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://wa.me/905558082727" target="_blank" class="whatsapp-footer-link"><i class="fab fa-whatsapp"></i></a></li>
+                <li><a href="tel:+905558082727" class="phone-footer-link"><i class="fas fa-phone"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom"><p data-translate="footer_copyright">&copy; 2025 Alanya VIP Yacht. Tüm hakları saklıdır.</p></div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/905558082727" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderBlogDetail();
+        });
+    </script>
+</body>
+</html>

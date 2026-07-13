@@ -577,3 +577,123 @@ body {
     background-color: #128c7e !important;
     border-color: #128c7e !important;
 }
+
+/* ===================== BLOG STYLES ==================== */
+.blog-header {
+    padding-top: 12rem;
+    padding-bottom: 6rem;
+    text-align: center;
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blog-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.blog-content-card {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-content-card h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+}
+
+.blog-content-card p {
+    font-size: 1.4rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex: 1;
+}
+
+.blog-date {
+    font-size: 1.2rem;
+    color: #999;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.read-more-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2rem;
+    align-self: flex-start;
+    transition: background 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.blog-article-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 4rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.blog-article-content h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+    font-family: var(--font-heading);
+}
+
+.blog-article-content h2:first-child {
+    margin-top: 0;
+}
+
+.blog-article-content p {
+    font-size: 1.6rem;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.blog-article-content img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
