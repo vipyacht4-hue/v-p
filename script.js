@@ -516,7 +516,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    }
 
     // BLOG LISTESİ MANTIĞI (blog.html)
     if (document.getElementById('blog-container')) {
