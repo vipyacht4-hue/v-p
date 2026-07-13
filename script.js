@@ -527,6 +527,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const langData = blog[currentLang];
                 const card = document.createElement('div');
                 card.className = 'blog-card';
+                card.style.cursor = 'pointer';
+                card.onclick = () => window.location.href = `blog-detay.html?id=${blog.id}`;
                 card.innerHTML = `
                     <img src="${blog.image}" alt="${langData.title}">
                     <div class="blog-content-card">
