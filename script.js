@@ -161,7 +161,7 @@ const translations = {
 // TUR DETAYLARI VERİTABANI (DİL DESTEKLİ)
 const tourDetails = {
     'sabah': {
-        images: ['GÖRSELLER/G6.jpg', 'GÖRSELLER/G12.jpg', 'GÖRSELLER/G7.jpg', 'GÖRSELLER/caves-1.jpg', 'GÖRSELLER/caves-2.jpg'], // Bu tura ait galeri resimleri
+        images: ['GÖRSELLER/G6.jpg', 'GÖRSELLER/G12.jpg', 'GÖRSELLER/G7.jpg', 'GÖRSELLER/caves-1.jpg', 'GÖRSELLER/caves-2.jpg', 'GÖRSELLER/G3.PNG', 'GÖRSELLER/G4.jpeg'], // Bu tura ait galeri resimleri
         tr: {
             title: 'Sabah Turu',
             description: 'Alanya\'nın berrak sabah sularında güne harika bir başlangıç yapın. Turumuz limandan çıkışla başlar ve Eski Tersane (Kırmızı Kule) önünde ilk yüzme molamızı veririz. Ardından tarihi Alanya Kalesi etrafında tur atarak Korsanlar Mağarası, Aşıklar Mağarası, Fosforlu Mağara ve Kuş Yuvası\'nı ziyaret ediyoruz. Sonrasında Kleopatra Plajı\'nda yüzüyor ve Kaplumbağa Plajı\'na geçerek şanslıysak deniz kaplumbağalarını gözlemliyoruz. Denizin durumuna göre lezzetli yemek molamızı Eski Tersane veya Kleopatra Plajı\'nda veriyoruz.',
@@ -179,7 +179,7 @@ const tourDetails = {
         }
     },
     'gunbatimi': {
-        images: ['GÖRSELLER/G11.jpg', 'GÖRSELLER/G13.jpeg', 'GÖRSELLER/G8.jpg', 'GÖRSELLER/caves-3.jpg', 'GÖRSELLER/caves-4.jpg'], // Bu tura ait galeri resimleri
+        images: ['GÖRSELLER/G11.jpg', 'GÖRSELLER/G13.jpeg', 'GÖRSELLER/G8.jpg', 'GÖRSELLER/caves-3.jpg', 'GÖRSELLER/caves-4.jpg', 'GÖRSELLER/G3.PNG', 'GÖRSELLER/G4.jpeg'], // Bu tura ait galeri resimleri
         tr: {
             title: 'Gün Batımı Turu',
             description: 'Akdeniz\'in en romantik anlarına denizin ortasından tanıklık edin. Turumuz limandan çıkışla başlar ve Eski Tersane önünde yüzme molası veririz. Kale etrafında tur atarak Korsanlar, Aşıklar, Fosforlu mağaralarını ve Kuş Yuvası\'nı geziyoruz. Kleopatra Plajı\'nda serinleyip Kaplumbağa Plajı\'nda kaplumbağaları arıyoruz. Denizin durumuna göre akşam yemeğimiz eşsiz gün batımı manzarasıyla Eski Tersane veya Kleopatra Plajı\'nda servis ediliyor.',
@@ -198,7 +198,7 @@ const tourDetails = {
     },
     // --- YENİ TURLARI BU FORMATTA AŞAĞIYA EKLEYEBİLİRSİNİZ ---
     'gunluk': {
-        images: ['GÖRSELLER/G5.jpg', 'GÖRSELLER/G9.jpg', 'GÖRSELLER/G2.jpg', 'GÖRSELLER/caves-5.jpg', 'GÖRSELLER/caves-6.jpg'],
+        images: ['GÖRSELLER/G5.jpg', 'GÖRSELLER/G9.jpg', 'GÖRSELLER/G2.jpg', 'GÖRSELLER/caves-5.jpg', 'GÖRSELLER/caves-6.jpg', 'GÖRSELLER/G3.PNG', 'GÖRSELLER/G4.jpeg'],
         tr: { 
             title: 'Günlük Tur', 
             description: 'Alanya\'nın en güzel koylarını tam gün keşfedin! Turumuz limandan çıkışla başlar ve Eski Tersane (Kırmızı Kule) önünde ilk yüzme molamızı veririz. Ardından tarihi Alanya Kalesi etrafında tur atarak sırasıyla Korsanlar Mağarası, Aşıklar Mağarası, Fosforlu Mağara ve Kuş Yuvası\'nı ziyaret ediyoruz. Sonrasında ünlü Kleopatra Plajı\'nda yüzme molası veriyor ve Kaplumbağa Plajı\'na geçerek şanslıysak deniz kaplumbağalarını gözlemliyoruz. Denizin durumuna göre enfes öğle yemeği molamızı Eski Tersane veya Kleopatra Plajı\'nda veriyoruz.', 
