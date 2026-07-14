@@ -164,17 +164,17 @@ const tourDetails = {
         images: ['GÖRSELLER/G6.jpg', 'GÖRSELLER/G12.jpg', 'GÖRSELLER/G7.jpg'], // Bu tura ait galeri resimleri
         tr: {
             title: 'Sabah Turu',
-            description: 'Alanya\'nın berrak ve sakin sabah sularında güne harika bir başlangıç yapın. Tarihi Alanya Kalesi manzarası eşliğinde serinleyin ve enerji toplayın. Sabahın ilk ışıklarıyla birlikte denizin maviliğinde yüzme molası verin ve güneşin doğuşunu izleyin. Profesyonel ekibimizle birlikte lüks yatımızda konfor ve huzuru bir arada yaşayın.',
+            description: 'Alanya\'nın berrak sabah sularında güne harika bir başlangıç yapın. Turumuz limandan çıkışla başlar ve Eski Tersane (Kırmızı Kule) önünde ilk yüzme molamızı veririz. Ardından tarihi Alanya Kalesi etrafında tur atarak Korsanlar Mağarası, Aşıklar Mağarası, Fosforlu Mağara ve Kuş Yuvası\'nı ziyaret ediyoruz. Sonrasında Kleopatra Plajı\'nda yüzüyor ve Kaplumbağa Plajı\'na geçerek şanslıysak deniz kaplumbağalarını gözlemliyoruz. Denizin durumuna göre lezzetli yemek molamızı Eski Tersane veya Kleopatra Plajı\'nda veriyoruz.',
             includes: ['4 Saatlik Sabah Turu', 'Kahvaltı Tabağı', 'Taze Meyve ve Atıştırmalıklar', 'Sınırsız İçecek (Alkolsüz)', 'Yüzme ve Şnorkel Ekipmanları', 'Profesyonel Kaptan ve Mürettebat', 'Güneş Doğuşu Manzarası', 'Güvenlik Ekipmanları']
         },
         en: {
             title: 'Morning Tour',
-            description: 'Start your day wonderfully in the clear and calm morning waters of Alanya. Cool off and gather energy with the view of the historic Alanya Castle. Take a swimming break in the blue of the sea with the first lights of the morning and watch the sunrise. Experience comfort and peace together on our luxury yacht with our professional crew.',
+            description: 'Start your day wonderfully in the clear morning waters of Alanya. Our tour departs from the harbor with a first swimming break at the Old Shipyard (Red Tower). We then cruise around Alanya Castle visiting the Pirates Cave, Lovers Cave, Phosphorus Cave, and Bird\'s Nest. Afterwards, we swim at Cleopatra Beach and head to Turtle Beach to observe sea turtles if we are lucky. Depending on sea conditions, our meal is served at the Old Shipyard or Cleopatra Beach.',
             includes: ['4-Hour Morning Tour', 'Breakfast Platter', 'Fresh Fruits and Snacks', 'Unlimited Drinks (Non-Alcoholic)', 'Swimming and Snorkeling Equipment', 'Professional Captain and Crew', 'Sunrise View', 'Safety Equipment']
         },
         ru: {
             title: 'Утренний Тур',
-            description: 'Начните свой день прекрасно в чистых и спокойных утренних водах Аланьи. Освежитесь и наберитесь энергии с видом на историческую крепость Аланьи. Сделайте перерыв для плавания в синеве моря с первыми лучами утра и наблюдайте за восходом солнца. Испытайте комфорт и покой вместе на нашей роскошной яхте с нашей профессиональной командой.',
+            description: 'Начните день в чистых утренних водах Аланьи. Наш тур выходит из порта с первой остановкой у Старой верфи (Красная башня). Затем мы огибаем крепость Аланьи, посещая Пиратскую пещеру, Пещеру влюбленных, Фосфорную пещеру и Птичье гнездо. Далее купаемся на пляже Клеопатры и отправляемся на Черепаший пляж, чтобы понаблюдать за черепахами. В зависимости от моря, обед подается на Старой верфи или на пляже Клеопатры.',
             includes: ['4-часовой утренний тур', 'Тарелка для завтрака', 'Свежие фрукты и закуски', 'Безлимитные напитки (безалкогольные)', 'Оборудование для плавания и снорклинга', 'Профессиональный капитан и команда', 'Вид на восход солнца', 'Оборудование безопасности']
         }
     },
@@ -182,17 +182,17 @@ const tourDetails = {
         images: ['GÖRSELLER/G11.jpg', 'GÖRSELLER/G13.jpeg', 'GÖRSELLER/G8.jpg'], // Bu tura ait galeri resimleri
         tr: {
             title: 'Gün Batımı Turu',
-            description: 'Akdeniz\'in en romantik anlarına denizin ortasından tanıklık edin. Güneşin kızıla boyadığı gökyüzü altında unutulmaz fotoğraflar çekin ve anın tadını çıkarın. Romantik bir akşam yemeği eşliğinde güneşin batışını izleyin ve sevdiklerinizle birlikte özel anlar yaşayın. Profesyonel ekibimizle birlikte lüks yatımızda romantik bir deneyim yaşayın.',
+            description: 'Akdeniz\'in en romantik anlarına denizin ortasından tanıklık edin. Turumuz limandan çıkışla başlar ve Eski Tersane önünde yüzme molası veririz. Kale etrafında tur atarak Korsanlar, Aşıklar, Fosforlu mağaralarını ve Kuş Yuvası\'nı geziyoruz. Kleopatra Plajı\'nda serinleyip Kaplumbağa Plajı\'nda kaplumbağaları arıyoruz. Denizin durumuna göre akşam yemeğimiz eşsiz gün batımı manzarasıyla Eski Tersane veya Kleopatra Plajı\'nda servis ediliyor.',
             includes: ['4 Saatlik Akşam Turu', 'Romantik Akşam Yemeği', 'Özel İçecek Seçimi', 'Canlı Müzik (İsteğe Bağlı)', 'Gün Batımı Fotoğraf Çekimi', 'Özel Rota ve Duraklar', 'Lüks İç Mekan', 'Güvenlik ve Sigorta']
         },
         en: {
             title: 'Sunset Tour',
-            description: 'Witness the most romantic moments of the Mediterranean from the middle of the sea. Take unforgettable photos under the sky painted red by the sun and enjoy the moment. Watch the sunset with a romantic dinner and experience special moments with your loved ones. Have a romantic experience on our luxury yacht with our professional crew.',
+            description: 'Witness the most romantic moments of the Mediterranean. Departing from the harbor, we swim at the Old Shipyard. We cruise around the castle to see the Pirates, Lovers, Phosphorus caves, and Bird\'s Nest. We cool off at Cleopatra Beach and look for turtles at Turtle Beach. Depending on sea conditions, our romantic dinner is served at the Old Shipyard or Cleopatra Beach with a sunset view.',
             includes: ['4-Hour Evening Tour', 'Romantic Dinner', 'Special Drink Selection', 'Live Music (Optional)', 'Sunset Photo Shoot', 'Special Route and Stops', 'Luxury Interior', 'Safety and Insurance']
         },
         ru: {
             title: 'Тур на Закате',
-            description: 'Станьте свидетелем самых романтических моментов Средиземноморья с середины моря. Делайте незабываемые фотографии под небом, окрашенным в красный цвет солнцем, и наслаждайтесь моментом. Наблюдайте за закатом с романтическим ужином и переживайте особые моменты с вашими близкими. Испытайте романтическое приключение на нашей роскошной яхте с нашей профессиональной командой.',
+            description: 'Станьте свидетелем самых романтических моментов. Выйдя из порта, мы купаемся у Старой верфи. Огибаем крепость, чтобы увидеть Пиратскую, Влюбленных, Фосфорную пещеры и Птичье гнездо. Освежаемся на пляже Клеопатры и ищем черепах на Черепашьем пляже. В зависимости от моря, романтический ужин подается на Старой верфи или пляже Клеопатры на закате.',
             includes: ['4-часовой вечерний тур', 'Романтический ужин', 'Особый выбор напитков', 'Живая музыка (по желанию)', 'Фотосессия на закате', 'Особый маршрут и остановки', 'Роскошный интерьер', 'Безопасность и страховка']
         }
     },
@@ -201,17 +201,17 @@ const tourDetails = {
         images: ['GÖRSELLER/G5.jpg', 'GÖRSELLER/G9.jpg', 'GÖRSELLER/G2.jpg'],
         tr: { 
             title: 'Günlük Tur', 
-            description: 'Alanya\'nın en güzel koylarını keşfedin ve Akdeniz\'in maviliğinde unutulmaz bir gün geçirin. Profesyonel ekibimizle birlikte lüks yatımızda konfor ve eğlenceyi bir arada yaşayın. Tarihi Alanya Kalesi manzarası eşliğinde yüzme molası verin ve güneşin tadını çıkarın.', 
+            description: 'Alanya\'nın en güzel koylarını tam gün keşfedin! Turumuz limandan çıkışla başlar ve Eski Tersane (Kırmızı Kule) önünde ilk yüzme molamızı veririz. Ardından tarihi Alanya Kalesi etrafında tur atarak sırasıyla Korsanlar Mağarası, Aşıklar Mağarası, Fosforlu Mağara ve Kuş Yuvası\'nı ziyaret ediyoruz. Sonrasında ünlü Kleopatra Plajı\'nda yüzme molası veriyor ve Kaplumbağa Plajı\'na geçerek şanslıysak deniz kaplumbağalarını gözlemliyoruz. Denizin durumuna göre enfes öğle yemeği molamızı Eski Tersane veya Kleopatra Plajı\'nda veriyoruz.', 
             includes: ['8 Saatlik Tam Gün Turu', 'Öğle Yemeği (Barbekü)', 'Meyve Tabağı ve Atıştırmalıklar', 'Sınırsız İçecek (Alkolsüz)', 'Yüzme ve Şnorkel Ekipmanları', 'Profesyonel Kaptan ve Mürettebat', 'Müzik Sistemi', 'Güvenlik Ekipmanları'] 
         },
         en: { 
             title: 'Daily Tour', 
-            description: 'Discover the most beautiful bays of Alanya and spend an unforgettable day in the blue of the Mediterranean. Experience comfort and entertainment together on our luxury yacht with our professional crew. Take a swimming break with the view of the historic Alanya Castle and enjoy the sun.', 
+            description: 'Discover the most beautiful bays of Alanya all day! Our tour departs from the harbor with a first swimming break at the Old Shipyard (Red Tower). We then cruise around Alanya Castle visiting the Pirates Cave, Lovers Cave, Phosphorus Cave, and Bird\'s Nest. Afterwards, we swim at the famous Cleopatra Beach and head to Turtle Beach to observe sea turtles if lucky. Depending on sea conditions, our delicious lunch is served at the Old Shipyard or Cleopatra Beach.', 
             includes: ['8-Hour Full Day Tour', 'Lunch (BBQ)', 'Fruit Platter and Snacks', 'Unlimited Drinks (Non-Alcoholic)', 'Swimming and Snorkeling Equipment', 'Professional Captain and Crew', 'Music System', 'Safety Equipment'] 
         },
         ru: { 
             title: 'Дневной Тур', 
-            description: 'Откройте для себя самые красивые бухты Аланьи и проведите незабываемый день в синеве Средиземного моря. Испытайте комфорт и развлечения вместе на нашей роскошной яхте с нашей профессиональной командой. Сделайте перерыв для плавания с видом на историческую крепость Аланьи и насладитесь солнцем.', 
+            description: 'Откройте для себя красивые бухты Аланьи! Наш тур выходит из порта с первой остановкой у Старой верфи (Красная башня). Затем мы огибаем крепость Аланьи, посещая Пиратскую, Влюбленных, Фосфорную пещеры и Птичье гнездо. Далее купаемся на знаменитом пляже Клеопатры и отправляемся на Черепаший пляж, чтобы понаблюдать за черепахами. В зависимости от моря, обед барбекю подается на Старой верфи или пляже Клеопатры.', 
             includes: ['8-часовой полный день тура', 'Обед (барбекю)', 'Фруктовая тарелка и закуски', 'Безлимитные напитки (безалкогольные)', 'Оборудование для плавания и снорклинга', 'Профессиональный капитан и команда', 'Музыкальная система', 'Оборудование безопасности'] 
         }
     },
