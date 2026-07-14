@@ -697,3 +697,36 @@ body {
     border-radius: 10px;
     margin-bottom: 2rem;
 }
+
+/* TOUR DETAIL GALLERY FIX */
+#main-tour-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-thumbnails {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.gallery-thumbnails img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.gallery-thumbnails img:hover, 
+.gallery-thumbnails img.active {
+    opacity: 1;
+    border: 2px solid var(--primary-color);
+}
