@@ -216,7 +216,7 @@ const tourDetails = {
         }
     },
     'kiralama': {
-        images: ['GÖRSELLER/G3.jpg', 'GÖRSELLER/G4.jpg', 'GÖRSELLER/G10.jpg'],
+        images: ['GÖRSELLER/G3.PNG', 'GÖRSELLER/G4.jpeg', 'GÖRSELLER/G10.jpg'],
         tr: { 
             title: 'Özel Kiralama', 
             description: 'Özel anlarınız için Infinity yatını tamamen size özel kiralayın. Doğum günü, evlilik teklifi, şirket etkinliği veya romantik bir kaçamak için mükemmel çözüm. Rota, süre ve hizmetler tamamen size özel olarak planlanır. VIP hizmet anlayışımızla unutulmaz anlar yaşatın.', 
