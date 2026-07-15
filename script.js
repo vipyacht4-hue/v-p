@@ -598,4 +598,63 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // SAYFAYI İLK YÜKLEMEDE TERCÜME ET
     translatePage();
+
+    // WHATSAPP MODAL LOGIC
+    const waModalHtml = `
+    <div id="wa-modal-overlay" class="wa-modal-overlay">
+        <div class="wa-modal-content">
+            <span class="wa-modal-close" id="wa-modal-close">&times;</span>
+            <h3 class="wa-modal-title"><i class="fab fa-whatsapp"></i> WhatsApp</h3>
+            <p class="wa-modal-desc">Lütfen iletişim numarasını seçiniz / Please select contact number</p>
+            <div class="wa-modal-options">
+                <a href="#" target="_blank" class="wa-modal-btn" id="wa-modal-tr">
+                    Türkiye (+90 555 808 27 27)
+                </a>
+                <a href="#" target="_blank" class="wa-modal-btn" id="wa-modal-ru">
+                    Россия (+7 950 038-43-56)
+                </a>
+            </div>
+        </div>
+    </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', waModalHtml);
+
+    const waOverlay = document.getElementById('wa-modal-overlay');
+    const waClose = document.getElementById('wa-modal-close');
+    const waTr = document.getElementById('wa-modal-tr');
+    const waRu = document.getElementById('wa-modal-ru');
+
+    if (waClose) {
+        waClose.addEventListener('click', () => {
+            waOverlay.classList.remove('active');
+        });
+    }
+    if (waOverlay) {
+        waOverlay.addEventListener('click', (e) => {
+            if (e.target === waOverlay) waOverlay.classList.remove('active');
+        });
+    }
+
+    document.addEventListener('click', function(e) {
+        const waLink = e.target.closest('a[href*="wa.me"]');
+        if (waLink && !waLink.classList.contains('wa-modal-btn')) {
+            e.preventDefault();
+            
+            let textParam = '';
+            try {
+                const url = new URL(waLink.href);
+                textParam = url.searchParams.get('text') || '';
+            } catch(err) {}
+            
+            if (textParam) {
+                waTr.href = \`https://wa.me/905558082727?text=\${encodeURIComponent(textParam)}\`;
+                waRu.href = \`https://wa.me/79500384356?text=\${encodeURIComponent(textParam)}\`;
+            } else {
+                waTr.href = 'https://wa.me/905558082727';
+                waRu.href = 'https://wa.me/79500384356';
+            }
+            
+            waOverlay.classList.add('active');
+        }
+    });
 });

@@ -732,3 +732,98 @@ body {
     opacity: 1;
     border: 2px solid var(--primary-color);
 }
+
+/* WhatsApp Modal Styles */
+.wa-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.wa-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.wa-modal-content {
+    background: var(--light-color);
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.wa-modal-overlay.active .wa-modal-content {
+    transform: scale(1);
+}
+
+.wa-modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.wa-modal-close:hover {
+    color: var(--secondary-color);
+}
+
+.wa-modal-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+}
+
+.wa-modal-desc {
+    font-size: 1.4rem;
+    color: var(--dark-color);
+    margin-bottom: 2rem;
+}
+
+.wa-modal-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.wa-modal-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.6rem;
+    padding: 1.2rem;
+    border-radius: .5rem;
+    color: #fff;
+    background: #25d366;
+    transition: background 0.3s ease;
+}
+
+.wa-modal-btn:hover {
+    background: #128c7e;
+    color: #fff;
+}
+
+.wa-modal-btn i {
+    font-size: 2rem;
+}
