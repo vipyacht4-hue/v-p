@@ -647,8 +647,8 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch(err) {}
             
             if (textParam) {
-                waTr.href = \`https://wa.me/905558082727?text=\${encodeURIComponent(textParam)}\`;
-                waRu.href = \`https://wa.me/79500384356?text=\${encodeURIComponent(textParam)}\`;
+                waTr.href = `https://wa.me/905558082727?text=${encodeURIComponent(textParam)}`;
+                waRu.href = `https://wa.me/79500384356?text=${encodeURIComponent(textParam)}`;
             } else {
                 waTr.href = 'https://wa.me/905558082727';
                 waRu.href = 'https://wa.me/79500384356';
