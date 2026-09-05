@@ -1,151 +1,156 @@
 /* =================================================================== */
-/* ================= TUR DETAY SAYFASI ÖZEL STİLLERİ ================= */
+/* ================= TUR DETAY SAYFASI LÜKS STİLLERİ ================= */
 /* =================================================================== */
 .tour-detail-page {
-    padding-top: 8rem; /* Header yüksekliği kadar boşluk */
+    background: #050e1a;
+    min-height: 100vh;
+    color: var(--text-silver);
 }
 
-#tour-hero {
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('GÖRSELLER/G14.jpg') no-repeat center top/cover;
-    background-attachment: fixed;
-    position: relative;
-    color: #fff;
+.tour-detail-header-section {
+    padding: 16rem 3rem 6rem;
     text-align: center;
+    background: linear-gradient(180deg, rgba(5, 14, 26, 0.9) 0%, rgba(5, 14, 26, 0.6) 50%, #050e1a 100%),
+                url('GÖRSELLER/G9.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
-#tour-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-}
-
-#tour-title {
+.tour-hero-title {
     font-family: var(--font-heading);
-    font-size: 6rem;
-    z-index: 1;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-size: 5rem;
+    color: var(--text-white);
+    margin-bottom: 1.2rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
-.detail-container {
-    display: flex;
-    gap: 4rem;
-    flex-wrap: wrap;
+.tour-hero-subtitle {
+    font-size: 1.8rem;
+    color: var(--gold-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tour-body-section {
+    padding: 6rem 0 10rem 0;
+}
+
+.tour-detail-wrapper {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 6rem;
     align-items: flex-start;
 }
 
-.detail-left {
-    flex: 1 1 50rem;
+.main-gallery-box {
+    border-radius: 1.6rem;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-glass);
 }
 
-.detail-right {
-    flex: 1 1 40rem;
+.main-gallery-box img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
 }
 
-.detail-right h2 {
+.tour-info-card {
+    background: rgba(15, 36, 62, 0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 2rem;
+    padding: 4rem;
+}
+
+.info-section-heading {
     font-family: var(--font-heading);
-    font-size: 3.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
+    font-size: 2.8rem;
+    color: var(--text-white);
+    margin-bottom: 1.6rem;
+    position: relative;
+    padding-bottom: 1rem;
 }
 
-.detail-right p {
+.info-section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--gold-primary);
+}
+
+.tour-description-text {
     font-size: 1.6rem;
     line-height: 1.8;
-    color: #666;
-    margin-bottom: 3rem;
+    color: var(--text-silver);
 }
 
-.detail-right h3 {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid var(--secondary-color);
-}
-
-.includes-list {
+.tour-features-list {
     list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+}
+
+.tour-features-list li {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    font-size: 1.5rem;
+    color: var(--text-white);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 1.2rem 1.6rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tour-features-list li i {
+    color: var(--gold-primary);
     font-size: 1.6rem;
 }
 
-.includes-list li {
-    padding: 0.8rem 0;
+.tour-booking-cta-box {
+    margin-top: 4rem;
+    background: linear-gradient(135deg, rgba(14, 131, 149, 0.2) 0%, rgba(5, 14, 26, 0.6) 100%);
+    border: 1px solid var(--border-gold);
+    border-radius: 1.6rem;
+    padding: 3rem;
+    text-align: center;
+}
+
+.tour-booking-cta-box h3 {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    color: var(--text-white);
+    margin-bottom: 0.8rem;
+}
+
+.tour-booking-cta-box p {
+    font-size: 1.45rem;
+    color: var(--text-silver);
+    margin-bottom: 2.4rem;
+}
+
+.tour-booking-actions {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-}
-
-.includes-list li i {
-    color: var(--secondary-color);
-}
-
-/* Fotoğraf Galerisi Stilleri */
-.gallery-main-image {
-    margin-bottom: 1.5rem;
-}
-.gallery-main-image img {
-    width: 100%;
-    height: auto;
-    border-radius: .5rem;
-    box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
-}
-.gallery-thumbnails {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
-    gap: 1rem;
-}
-.gallery-thumbnails img {
-    width: 100%;
-    height: 8rem;
-    object-fit: cover;
-    border-radius: .5rem;
-    cursor: pointer;
-    border: 3px solid transparent;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-}
-.gallery-thumbnails img:hover {
-    transform: scale(1.05);
-}
-.gallery-thumbnails img.active {
-    border-color: var(--secondary-color);
-}
-
-
-/* Rezervasyon Bölümü */
-#booking {
-    background: var(--primary-color);
-    padding: 6rem 7%;
-    text-align: center;
-    color: #fff;
-}
-
-#booking h2 {
-    font-family: var(--font-heading);
-    font-size: 4rem;
-}
-
-#booking p {
-    font-size: 1.8rem;
-    margin-top: 1rem;
-    margin-bottom: 3rem;
-    max-width: 60rem;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.booking-buttons {
-    display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.6rem;
     flex-wrap: wrap;
+}
+
+@media (max-width: 992px) {
+    .tour-detail-wrapper {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
 }
 
 .btn-booking {

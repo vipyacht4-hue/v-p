@@ -1,753 +1,1868 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
 /* =================================================================== */
-/* ===================== GENEL AYARLAR VE DEĞİŞKENLER ================ */
+/* ===================== LUXURY DESIGN SYSTEM ======================== */
 /* =================================================================== */
 :root {
-    --primary-color: #0a2d4d; /* Koyu Mavi */
-    --secondary-color: #d4af37; /* Altın Sarısı */
-    --light-color: #f8f9fa;
-    --dark-color: #333;
+    --navy-deep: #050e1a;
+    --navy-main: #0a192f;
+    --navy-card: #0f243e;
+    --navy-light: #162e4e;
+    
+    --gold-primary: #d4af37;
+    --gold-light: #ecd580;
+    --gold-dark: #aa861b;
+    --gold-glow: rgba(212, 175, 55, 0.25);
+    
+    --teal-accent: #0e8395;
+    --teal-light: #20a4b8;
+    --teal-glow: rgba(14, 131, 149, 0.35);
+
+    --text-white: #ffffff;
+    --text-silver: #cbd5e1;
+    --text-muted: #94a3b8;
+    --text-dark: #0f172a;
+    --text-body-dark: #334155;
+
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+    
+    --border-glass: rgba(255, 255, 255, 0.12);
+    --border-gold: rgba(212, 175, 55, 0.35);
+    --border-card: rgba(255, 255, 255, 0.08);
+
+    --shadow-luxury: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.2);
+    --shadow-glow: 0 0 25px rgba(212, 175, 55, 0.3);
+
     --font-heading: 'Playfair Display', serif;
-    --font-body: 'Roboto', sans-serif;
-    --font-logo: 'Montserrat', sans-serif;
+    --font-script: 'Alex Brush', cursive;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-nav: 'Montserrat', sans-serif;
+
+    --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    --transition-fast: all 0.2s ease-in-out;
 }
 
+/* =================================================================== */
+/* ===================== GENEL SIFIRLAMA & TEMEL ===================== */
+/* =================================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--font-body);
     text-decoration: none;
     outline: none;
     border: none;
-    transition: all .2s linear;
+    -webkit-font-smoothing: antialiased;
 }
 
 html {
-    font-size: 62.5%;
-    overflow-x: hidden;
-    scroll-padding-top: 8rem;
+    font-size: 62.5%; /* 1rem = 10px */
     scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+    overflow-x: hidden;
 }
 
 body {
-    background: var(--light-color);
+    font-family: var(--font-sans);
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: var(--text-body-dark);
+    background-color: var(--navy-deep);
+    overflow-x: hidden;
 }
 
-.section-padding {
-    padding: 8rem 7%;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-.section-title {
-    text-align: center;
-    font-family: var(--font-heading);
-    font-size: 4rem;
-    color: var(--primary-color);
-    margin-bottom: 4rem;
+a {
+    color: inherit;
+    transition: var(--transition-fast);
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 1.2rem 3rem;
-    background: var(--secondary-color);
-    color: var(--primary-color);
-    font-size: 1.7rem;
-    font-weight: bold;
-    border-radius: 5rem;
+button {
     cursor: pointer;
-}
-
-.btn:hover {
-    background: #c5a031;
-    transform: scale(1.05);
+    font-family: inherit;
+    transition: var(--transition-smooth);
 }
 
 /* =================================================================== */
-/* ====================== YENİ EKLENEN ÖZELLİKLER ==================== */
+/* ===================== YÜKLEME EKRANI (PRELOADER) ================== */
 /* =================================================================== */
-
-/* Yükleme Ekranı Stili */
 #preloader {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--primary-color);
-    z-index: 9999;
+    background: radial-gradient(circle at center, #0e223d 0%, #050e1a 100%);
+    z-index: 99999;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
 }
-.loader-logo {
-    font-family: var(--font-logo);
-    font-size: 3rem;
-    color: #fff;
-    opacity: 1;
-    animation: pulse 1.5s infinite ease-in-out;
-}
-@keyframes pulse {
-    0%, 100% {
-        opacity: 0.5;
-        transform: scale(0.95);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
+
 #preloader.hidden {
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
 }
 
-/* Yukarı Çık Butonu Stili */
-#back-to-top {
-    position: fixed;
-    bottom: 3rem;
-    right: 3rem;
-    width: 5rem;
-    height: 5rem;
-    background: var(--secondary-color);
-    color: var(--primary-color);
-    font-size: 2.5rem;
+.loader-content {
     text-align: center;
-    line-height: 5rem;
-    border-radius: 50%;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
-    z-index: 1000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-#back-to-top.visible {
-    opacity: 1;
-    pointer-events: auto;
-}
-#back-to-top:hover {
-    transform: scale(1.1);
+    color: var(--text-white);
 }
 
-/* Çerez Banner Stili */
-#cookie-banner {
-    position: fixed;
-    bottom: -100%;
-    left: 0;
-    width: 100%;
-    background: rgba(10, 45, 77, 0.95);
-    backdrop-filter: blur(5px);
-    color: #fff;
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    z-index: 2000;
-    transition: bottom 0.5s ease;
-    flex-wrap: wrap;
-    text-align: center;
-}
-#cookie-banner.visible {
-    bottom: 0;
-}
-#cookie-banner p {
-    margin: 0;
-    font-size: 1.5rem;
+.loader-icon {
+    font-size: 3.6rem;
+    color: var(--gold-primary);
+    margin-bottom: 1.5rem;
+    animation: boatFloat 2s infinite ease-in-out;
 }
 
+.loader-logo {
+    font-family: var(--font-nav);
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 0.35rem;
+    color: var(--text-white);
+    margin-bottom: 0.6rem;
+}
+
+.loader-tagline {
+    font-size: 1.2rem;
+    letter-spacing: 0.4rem;
+    color: var(--gold-light);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.loader-bar {
+    width: 180px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.loader-progress {
+    display: block;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
+    animation: loaderMove 1.5s infinite ease-in-out;
+}
+
+@keyframes boatFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(-3deg); }
+}
+
+@keyframes loaderMove {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(250%); }
+}
 
 /* =================================================================== */
-/* ========================= HEADER VE NAVİGASYON ==================== */
+/* ===================== HEADER / NAVIGATION BAR ===================== */
 /* =================================================================== */
-#header {
+.site-header {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
+    width: 100%;
     z-index: 1000;
+    padding: 2.2rem 0;
+    transition: var(--transition-smooth);
+    background: linear-gradient(180deg, rgba(5, 14, 26, 0.85) 0%, rgba(5, 14, 26, 0) 100%);
+}
+
+.site-header.scrolled {
+    padding: 1.4rem 0;
+    background: rgba(8, 20, 38, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-glass);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.header-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 3rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 7%;
-    background: rgba(10, 45, 77, 0.8);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
 }
 
-#header .logo {
-    font-family: var(--font-logo);
-    font-size: 2.5rem;
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    color: var(--text-white);
+}
+
+.logo-symbol {
+    width: 42px;
+    height: 42px;
+    color: var(--gold-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-symbol svg {
+    width: 100%;
+    height: 100%;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    font-family: var(--font-nav);
+    font-size: 2rem;
     font-weight: 700;
-    color: #fff;
+    letter-spacing: 0.18rem;
+    color: var(--text-white);
+    line-height: 1.1;
 }
 
-#header .navbar a {
-    font-size: 1.7rem;
-    margin-left: 2rem;
-    color: #fff;
+.brand-sub {
+    font-family: var(--font-nav);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.28rem;
+    color: var(--gold-primary);
+    line-height: 1.2;
 }
 
-#header .navbar a:hover {
-    color: var(--secondary-color);
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 2.8rem;
 }
 
-/* Dil Değiştirici ve Mobil Menü */
+.nav-link {
+    font-family: var(--font-nav);
+    font-size: 1.35rem;
+    font-weight: 500;
+    letter-spacing: 0.08rem;
+    color: var(--text-silver);
+    position: relative;
+    padding: 0.6rem 0;
+    text-transform: uppercase;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold-primary);
+    transition: var(--transition-smooth);
+    border-radius: 2px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--text-white);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Header Right */
 .header-right {
     display: flex;
     align-items: center;
-    gap: 2rem;
-}
-.language-switcher {
-    display: flex;
-    gap: .8rem;
-    background: rgba(255,255,255,0.1);
-    padding: .5rem;
-    border-radius: 5rem;
-}
-.lang-btn img {
-    width: 2.8rem;
-    height: 2.8rem;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid transparent;
-    transition: transform .2s ease;
-}
-.lang-btn:hover img {
-    transform: scale(1.1);
-}
-.lang-btn.active img {
-    border-color: var(--secondary-color);
+    gap: 1.6rem;
 }
 
-#menu-bars {
-    font-size: 3rem;
-    color: #fff;
-    cursor: pointer;
-    display: none;
+/* Dil Seçici Dropdown */
+.language-dropdown {
+    position: relative;
 }
 
-/* =================================================================== */
-/* =========================== BÖLÜM STİLLERİ ======================== */
-/* =================================================================== */
-
-/* Hero Section */
-#hero {
-    min-height: 100vh;
+.lang-current-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-glass);
+    border-radius: 3rem;
+    padding: 0.7rem 1.4rem;
+    color: var(--text-white);
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: relative;
-    text-align: center;
-    color: #fff;
-    overflow: hidden;
+    gap: 0.8rem;
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
-#hero-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.lang-current-btn img {
+    width: 18px;
+    height: 14px;
+    border-radius: 2px;
     object-fit: cover;
-    z-index: -2;
-    will-change: transform;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.5s ease;
 }
 
-#hero::before {
-    content: '';
+.lang-current-btn i {
+    font-size: 1rem;
+    color: var(--gold-primary);
+    transition: var(--transition-fast);
+}
+
+.language-dropdown.open .lang-current-btn i {
+    transform: rotate(180deg);
+}
+
+.lang-dropdown-menu {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: -1;
-}
-
-#hero .hero-content {
-    position: relative;
-    z-index: 1;
-}
-
-#hero h1 {
-    font-family: var(--font-heading);
-    font-size: 8vw;
-    font-weight: 700;
-}
-
-#hero p {
-    font-size: 2.5rem;
-    margin-top: 1rem;
-    font-family: var(--font-logo);
-    letter-spacing: 2px;
-    font-weight: 400;
-    text-transform: uppercase;
-}
-
-/* Turlarımız Bölümü */
-.tour-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
-    gap: 2.5rem;
-    max-width: 120rem;
-    margin: 0 auto;
-}
-
-.tour-card-link {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    border-radius: .5rem;
-    box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
-    overflow: hidden;
-}
-
-.tour-card {
-    position: relative;
-    cursor: pointer;
-}
-
-.tour-card img {
-    width: 100%;
-    height: 38rem;
-    object-fit: cover;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    will-change: transform;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-}
-
-.tour-card h3 {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    padding: 1.5rem;
-    background-color: #fff;
-    margin-top: -0.5rem;
-    position: relative;
-    z-index: 2;
-}
-
-.tour-card .card-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 38rem;
-    background: rgba(212, 175, 55, 0.7);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
+    top: calc(100% + 1rem);
+    right: 0;
+    background: rgba(10, 25, 47, 0.98);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--border-glass);
+    border-radius: 1.2rem;
+    padding: 0.8rem 0;
+    min-width: 150px;
+    box-shadow: var(--shadow-luxury);
     opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: var(--transition-smooth);
+    z-index: 1001;
 }
 
-.tour-card-link:hover .card-overlay {
+.language-dropdown.open .lang-dropdown-menu {
     opacity: 1;
-}
-
-.tour-card .card-overlay i {
-    font-size: 4rem;
-}
-
-.tour-card .card-overlay span {
-    font-size: 1.8rem;
-    margin-top: 1rem;
-    font-weight: bold;
-}
-
-
-/* Yatımız Bölümü */
-#yacht .yacht-content {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    flex-wrap: wrap;
-}
-
-#yacht .yacht-image {
-    flex: 1 1 45rem;
-}
-
-#yacht .yacht-image img {
-    width: 100%;
-    border-radius: .5rem;
-    box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
-}
-
-#yacht .yacht-info {
-    flex: 1 1 45rem;
-}
-
-#yacht .yacht-info h3 {
-    font-family: var(--font-heading);
-    font-size: 3rem;
-    color: var(--primary-color);
-}
-
-#yacht .yacht-info p {
-    font-size: 1.6rem;
-    color: #666;
-    margin: 1.5rem 0;
-    line-height: 1.8;
-}
-
-/* Hareketli Sayı Stilleri */
-.features-counter {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 3rem;
-    text-align: center;
-}
-.feature-item-counter {
-    background: #fff;
-    padding: 1.5rem 1rem;
-    border-radius: .5rem;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.05);
-}
-.feature-item-counter i {
-    font-size: 2.5rem;
-    color: var(--secondary-color);
-    margin-bottom: 0.8rem;
-}
-.feature-item-counter .counter, .feature-item-counter .award-text {
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    font-family: var(--font-logo);
-    display: block;
-    margin-bottom: 0.5rem;
-}
-.feature-item-counter p {
-    font-size: 1.2rem;
-    color: #666;
-    margin: 0;
-}
-
-/* Footer (İletişim) */
-#contact {
-    background: var(--primary-color);
-    color: var(--light-color);
-    text-align: center;
-    padding: 4rem 7%;
-}
-
-#contact h3 {
-    font-family: var(--font-heading);
-    font-size: 3rem;
-}
-
-#contact p {
-    font-size: 1.6rem;
-    margin-top: 1rem;
-}
-
-.socials {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 2rem 0;
-}
-
-.socials li a {
-    font-size: 3rem;
-    color: var(--light-color);
-    margin: 0 1.5rem;
-}
-
-.socials li a:hover {
-    color: var(--secondary-color);
-}
-
-.footer-bottom {
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    font-size: 1.4rem;
-}
-
-/* Giriş Animasyonu */
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.animate-on-scroll.visible {
-    opacity: 1;
+    visibility: visible;
     transform: translateY(0);
 }
 
-/* =================================================================== */
-/* ===================== RESPONSIVE (MOBİL UYUM) ===================== */
-/* =================================================================== */
-@media (max-width:991px) {
-    html {
-        font-size: 55%;
-    }
-    #header {
-        padding: 2rem;
-    }
-    .section-padding {
-        padding: 6rem 2rem;
-    }
+.lang-dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1.6rem;
+    font-size: 1.35rem;
+    color: var(--text-silver);
 }
 
-@media (max-width:768px) {
-    #menu-bars {
-        display: initial;
-    }
-    #header .navbar {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--primary-color);
-        border-top: .1rem solid rgba(0,0,0,.1);
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    }
-    #header .navbar.active {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-    #header .navbar a {
-        display: block;
-        margin: 2rem;
-        padding: 1.5rem;
-        background: var(--light-color);
-        color: var(--primary-color);
-        border-radius: .5rem;
-    }
-    #hero h1 {
-        font-size: 12vw;
-    }
-    .features-counter {
-        grid-template-columns: 1fr;
-    }
+.lang-dropdown-menu a img {
+    width: 18px;
+    height: 14px;
+    border-radius: 2px;
 }
 
-@media (max-width:450px) {
-    html {
-        font-size: 50%;
-    }
+.lang-dropdown-menu a:hover {
+    background: rgba(212, 175, 55, 0.15);
+    color: var(--gold-light);
 }
 
-/* WhatsApp Styles */
-.whatsapp-float {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background-color: #25d366;
-    color: #fff;
+/* Header İkon Butonu */
+.header-icon-btn {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    width: 6rem;
-    height: 6rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-glass);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3.5rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
-    transition: transform 0.3s ease;
-    text-decoration: none;
+    color: #25d366;
+    font-size: 1.8rem;
 }
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
+.header-icon-btn:hover {
+    background: #25d366;
     color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.35);
 }
 
-.btn-whatsapp {
-    background-color: #25d366 !important;
-    color: #fff !important;
-    border-color: #25d366 !important;
-}
-
-.btn-whatsapp:hover {
-    background-color: #128c7e !important;
-    border-color: #128c7e !important;
-}
-
-/* ===================== BLOG STYLES ==================== */
-.blog-header {
-    padding-top: 12rem;
-    padding-bottom: 6rem;
-    text-align: center;
-    color: #fff;
-    background-size: cover;
-    background-position: center;
-}
-
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.blog-card {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-}
-
-.blog-card:hover {
-    transform: translateY(-10px);
-}
-
-.blog-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-
-.blog-content-card {
-    padding: 2rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.blog-content-card h3 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-family: var(--font-heading);
-}
-
-.blog-content-card p {
-    font-size: 1.4rem;
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    flex: 1;
-}
-
-.blog-date {
-    font-size: 1.2rem;
-    color: #999;
-    margin-bottom: 1rem;
-    display: block;
-}
-
-.read-more-btn {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: var(--primary-color);
-    color: #fff;
-    border-radius: 5px;
-    text-transform: uppercase;
+/* Header CTA Buton */
+.btn-header-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.4rem;
+    background: linear-gradient(135deg, #d4af37 0%, #aa861b 100%);
+    color: #050e1a;
+    font-family: var(--font-nav);
+    font-size: 1.3rem;
     font-weight: 700;
-    font-size: 1.2rem;
-    align-self: flex-start;
-    transition: background 0.3s ease;
+    letter-spacing: 0.08rem;
+    border-radius: 3rem;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
-.read-more-btn:hover {
-    background: var(--secondary-color);
-    color: var(--primary-color);
+.btn-header-cta:hover {
+    background: linear-gradient(135deg, #ebd17a 0%, #d4af37 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45);
 }
 
-.blog-article-content {
-    max-width: 800px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 4rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+/* Mobil Hamburger Menü */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-glass);
+    border-radius: 0.8rem;
+    padding: 8px;
 }
 
-.blog-article-content h2 {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 2rem;
-    margin-top: 3rem;
-    font-family: var(--font-heading);
-}
-
-.blog-article-content h2:first-child {
-    margin-top: 0;
-}
-
-.blog-article-content p {
-    font-size: 1.6rem;
-    color: #444;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-}
-
-.blog-article-content img {
+.mobile-menu-toggle span {
     width: 100%;
-    border-radius: 10px;
-    margin-bottom: 2rem;
+    height: 2px;
+    background: var(--text-white);
+    transition: var(--transition-fast);
+    border-radius: 2px;
 }
 
-/* TOUR DETAIL GALLERY FIX */
-#main-tour-image {
-    max-width: 100%;
-    max-height: 500px;
-    object-fit: contain;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    display: block;
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =================================================================== */
+/* ===================== HERO SECTION ================================ */
+/* =================================================================== */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 14rem 0 10rem 0;
+    background: var(--navy-deep);
+    overflow: hidden;
+}
+
+.hero-bg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    filter: brightness(0.85);
+    transition: opacity 0.4s ease;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 75% 40%, rgba(5, 14, 26, 0.1) 0%, rgba(5, 14, 26, 0.75) 65%, #050e1a 100%),
+                linear-gradient(180deg, rgba(5, 14, 26, 0.5) 0%, rgba(5, 14, 26, 0.3) 50%, #050e1a 100%);
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1360px;
     margin: 0 auto;
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.gallery-thumbnails {
+.hero-content {
+    max-width: 680px;
+    color: var(--text-white);
+}
+
+.hero-subtitle-badge {
+    display: inline-block;
+    font-family: var(--font-nav);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.3rem;
+    color: var(--gold-light);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    position: relative;
+    padding-left: 2.8rem;
+}
+
+.hero-subtitle-badge::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    background: var(--gold-primary);
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 5.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--text-white);
+    margin-bottom: 2.4rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-title .script-accent {
+    display: block;
+    font-family: var(--font-script);
+    font-size: 7.2rem;
+    font-weight: 400;
+    color: var(--gold-primary);
+    line-height: 1.1;
+    margin-top: 0.5rem;
+    text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+}
+
+.hero-desc {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    color: var(--text-silver);
+    margin-bottom: 3.6rem;
+    max-width: 540px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Hero Aksiyon Butonları */
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    margin-bottom: 4.8rem;
+    flex-wrap: wrap;
+}
+
+.btn-hero-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.6rem 3.4rem;
+    background: linear-gradient(135deg, #d4af37 0%, #aa861b 100%);
+    color: #050e1a;
+    font-family: var(--font-nav);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    border-radius: 5rem;
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.35);
+}
+
+.btn-hero-primary:hover {
+    background: linear-gradient(135deg, #ebd17a 0%, #d4af37 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.5);
+}
+
+.btn-hero-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.6rem 3.2rem;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-glass);
+    color: var(--text-white);
+    font-family: var(--font-nav);
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    border-radius: 5rem;
+}
+
+.btn-hero-secondary:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: var(--gold-primary);
+    color: var(--gold-light);
+    transform: translateY(-3px);
+}
+
+/* Güven Rozetleri */
+.hero-trust-badges {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2.8rem;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.trust-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(14, 131, 149, 0.2);
+    border: 1px solid rgba(14, 131, 149, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal-light);
+    font-size: 1.5rem;
+}
+
+.trust-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.trust-text strong {
+    font-size: 1.35rem;
+    color: var(--text-white);
+    font-weight: 600;
+}
+
+.trust-text span {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+}
+
+/* Sağ Video & Slider Kontrolleri */
+.hero-side-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6rem;
+}
+
+.hero-video-circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+    transition: var(--transition-smooth);
+}
+
+.hero-video-circle:hover {
+    transform: scale(1.08);
+    background: #ffffff;
+    box-shadow: 0 20px 45px rgba(212, 175, 55, 0.4);
+}
+
+.circle-rotating-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #050e1a;
+    font-weight: 700;
+    animation: rotateCircle 14s linear infinite;
+}
+
+.circle-play-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal-accent), #05505c);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    padding-left: 3px;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(14, 131, 149, 0.4);
+}
+
+@keyframes rotateCircle {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.hero-slider-pagination {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.5rem;
+}
+
+.slider-numbers {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    color: var(--text-white);
+    font-family: var(--font-nav);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.active-slide {
+    color: var(--gold-primary);
+}
+
+.slider-line {
+    width: 40px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.slider-nav-arrows {
     display: flex;
     gap: 1rem;
-    margin-top: 1.5rem;
-    overflow-x: auto;
-    padding-bottom: 0.5rem;
 }
 
-.gallery-thumbnails img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 5px;
+.slider-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-glass);
+    color: var(--text-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.slider-arrow:hover {
+    background: var(--gold-primary);
+    color: #050e1a;
+    border-color: var(--gold-primary);
+}
+
+/* =================================================================== */
+/* ============ HERO YÜZEN ARAMA & REZERVASYON ÇUBUĞU ================= */
+/* =================================================================== */
+.hero-booking-bar-wrapper {
+    position: relative;
+    z-index: 3;
+    max-width: 1280px;
+    margin: 4rem auto 0 auto;
+    padding: 0 3rem;
+    width: 100%;
+}
+
+.hero-booking-bar {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    border-radius: 2rem;
+    padding: 1.4rem 2rem;
+    display: grid;
+    grid-template-columns: 1.2fr auto 1.2fr auto 1.2fr auto 1.3fr auto;
+    align-items: center;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+.booking-field-item {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    padding: 0.8rem 1.6rem;
+}
+
+.field-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(14, 131, 149, 0.1);
+    color: var(--teal-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+
+.field-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.field-content label {
+    font-family: var(--font-nav);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    color: #64748b;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+}
+
+.field-val {
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.bar-input-date,
+.bar-select {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    background: transparent;
     cursor: pointer;
-    opacity: 0.6;
-    transition: opacity 0.3s;
+    font-family: var(--font-sans);
 }
 
-.gallery-thumbnails img:hover, 
-.gallery-thumbnails img.active {
+.booking-divider {
+    width: 1px;
+    height: 40px;
+    background: #e2e8f0;
+}
+
+.btn-booking-search {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.4rem 2.8rem;
+    background: linear-gradient(135deg, var(--teal-accent) 0%, #03525d 100%);
+    color: #ffffff;
+    font-family: var(--font-nav);
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.08rem;
+    border-radius: 1.4rem;
+    box-shadow: 0 8px 20px rgba(14, 131, 149, 0.35);
+    white-space: nowrap;
+}
+
+.btn-booking-search:hover {
+    background: linear-gradient(135deg, #139cb1 0%, var(--teal-accent) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(14, 131, 149, 0.5);
+}
+
+/* =================================================================== */
+/* ===================== NEDEN BİZ? BÖLÜMÜ (Görsel 1) ================ */
+/* =================================================================== */
+.why-us-section {
+    background-color: #061120;
+    padding: 11rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.why-us-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, rgba(6, 17, 32, 0) 70%);
+    pointer-events: none;
+}
+
+.why-us-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.why-us-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.section-tag {
+    font-family: var(--font-nav);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.25rem;
+    color: var(--gold-primary);
+    margin-bottom: 1.6rem;
+    text-transform: uppercase;
+}
+
+.section-heading-dark {
+    font-family: var(--font-heading);
+    font-size: 4.2rem;
+    font-weight: 700;
+    color: var(--text-white);
+    line-height: 1.25;
+    margin-bottom: 2rem;
+}
+
+.section-text-dark {
+    font-size: 1.65rem;
+    line-height: 1.75;
+    color: var(--text-silver);
+    margin-bottom: 3.2rem;
+}
+
+.btn-outline-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.4rem 2.8rem;
+    background: transparent;
+    border: 1px solid var(--border-gold);
+    color: var(--gold-light);
+    font-family: var(--font-nav);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    border-radius: 0.6rem;
+}
+
+.btn-outline-gold:hover {
+    background: var(--gold-primary);
+    color: #050e1a;
+    border-color: var(--gold-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+}
+
+/* 4'lü Lüks Kart Grid */
+.why-us-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.luxury-card {
+    background: rgba(15, 36, 62, 0.45);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.2rem;
+    padding: 3.6rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: var(--transition-smooth);
+}
+
+.luxury-card:hover {
+    background: rgba(15, 36, 62, 0.85);
+    border-color: var(--border-gold);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.15);
+}
+
+.card-icon-gold {
+    width: 60px;
+    height: 60px;
+    color: var(--gold-primary);
+    margin-bottom: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+}
+
+.luxury-card:hover .card-icon-gold {
+    transform: scale(1.1);
+    color: var(--gold-light);
+}
+
+.card-title-gold {
+    font-family: var(--font-nav);
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    color: var(--text-white);
+    margin-bottom: 1.4rem;
+    text-transform: uppercase;
+}
+
+.card-desc-gold {
+    font-size: 1.35rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* =================================================================== */
+/* ===================== TURLARIMIZ / EŞSİZ ROTALAR (Görsel 2) ======== */
+/* =================================================================== */
+.tours-section {
+    position: relative;
+    padding: 11rem 0 12rem 0;
+    background: #071526;
+    overflow: hidden;
+}
+
+.tours-bg-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, #061120 0%, rgba(7, 21, 38, 0.85) 50%, #071526 100%),
+                      url('GÖRSELLER/G9.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.18;
+    pointer-events: none;
+}
+
+.tours-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+.tours-header-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+}
+
+.tours-header-left {
+    max-width: 600px;
+}
+
+.tours-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.4rem;
+}
+
+.tour-route-card {
+    position: relative;
+    border-radius: 1.6rem;
+    overflow: hidden;
+    height: 380px;
+    display: block;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: var(--transition-smooth);
+}
+
+.tour-route-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--border-gold);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 25px rgba(212, 175, 55, 0.2);
+}
+
+.tour-img-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.tour-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.tour-route-card:hover .tour-img-box img {
+    transform: scale(1.08);
+}
+
+.tour-overlay-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(5, 14, 26, 0.1) 0%, rgba(5, 14, 26, 0.4) 50%, rgba(5, 14, 26, 0.95) 100%);
+}
+
+.tour-info-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2.2rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.tour-location-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-white);
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.tour-location-badge i {
+    color: var(--gold-primary);
+    font-size: 1.5rem;
+}
+
+.tour-duration-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--gold-light);
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.tour-duration-badge i {
+    font-size: 1.2rem;
+}
+
+/* =================================================================== */
+/* ===================== HIZLI REZERVASYON (Görsel 2) ================ */
+/* =================================================================== */
+.quick-booking-section {
+    background-color: var(--bg-light);
+    padding: 7rem 0;
+    position: relative;
+}
+
+.quick-booking-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+.quick-booking-box {
+    background: #ffffff;
+    border-radius: 2rem;
+    padding: 4.5rem 5rem;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: center;
+    border: 1px solid #f1f5f9;
+}
+
+.section-tag-gold {
+    font-family: var(--font-nav);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    color: var(--gold-dark);
+    margin-bottom: 1.2rem;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.qb-title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.3;
+    margin-bottom: 1.2rem;
+}
+
+.qb-desc {
+    font-size: 1.5rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.qb-form-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1.2fr auto;
+    gap: 1.6rem;
+    align-items: flex-end;
+}
+
+.qb-input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.qb-input-group label {
+    font-family: var(--font-nav);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.08rem;
+    color: #475569;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+}
+
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-icon input,
+.input-with-icon select {
+    width: 100%;
+    padding: 1.3rem 3.6rem 1.3rem 1.4rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    font-family: var(--font-sans);
+    color: var(--text-dark);
+    background: #ffffff;
+    appearance: none;
+    transition: var(--transition-fast);
+}
+
+.input-with-icon input:focus,
+.input-with-icon select:focus {
+    border-color: var(--gold-primary);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+}
+
+.input-with-icon i {
+    position: absolute;
+    right: 1.4rem;
+    color: #94a3b8;
+    pointer-events: none;
+    font-size: 1.4rem;
+}
+
+.btn-qb-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.3rem 2.6rem;
+    background: #061528;
+    color: #ffffff;
+    font-family: var(--font-nav);
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.08rem;
+    border-radius: 1rem;
+    white-space: nowrap;
+}
+
+.btn-qb-submit:hover {
+    background: var(--gold-primary);
+    color: #050e1a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35);
+}
+
+/* =================================================================== */
+/* ===================== YATIMIZ / SHOWCASE SECTION ================== */
+/* =================================================================== */
+.yacht-showcase-section {
+    background-color: #050e1a;
+    padding: 11rem 0;
+}
+
+.yacht-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+.yacht-card-hero {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+    background: rgba(15, 36, 62, 0.35);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 2.4rem;
+    padding: 4.5rem;
+}
+
+.yacht-image-side {
+    position: relative;
+    border-radius: 1.8rem;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+}
+
+.yacht-image-side img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.yacht-image-side:hover img {
+    transform: scale(1.04);
+}
+
+.yacht-badge-floating {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-gold);
+    color: var(--gold-light);
+    padding: 0.8rem 1.6rem;
+    border-radius: 3rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.yacht-title {
+    font-family: var(--font-heading);
+    font-size: 3.8rem;
+    font-weight: 700;
+    color: var(--text-white);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.yacht-subtitle {
+    font-size: 1.8rem;
+    color: var(--gold-primary);
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.yacht-desc {
+    font-size: 1.6rem;
+    line-height: 1.75;
+    color: var(--text-silver);
+    margin-bottom: 3.2rem;
+}
+
+.yacht-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+    margin-bottom: 3.6rem;
+}
+
+.spec-box {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.2rem;
+    padding: 1.8rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.spec-box i {
+    font-size: 2.2rem;
+    color: var(--gold-primary);
+    margin-bottom: 0.8rem;
+}
+
+.spec-box strong {
+    font-size: 2.2rem;
+    color: var(--text-white);
+    margin-bottom: 0.3rem;
+}
+
+.spec-box span {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+}
+
+/* =================================================================== */
+/* ===================== ANILAR / INSTAGRAM (Görsel 2) =============== */
+/* =================================================================== */
+.memories-section {
+    background-color: #ffffff;
+    padding: 10rem 0;
+}
+
+.memories-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+.memories-row {
+    display: grid;
+    grid-template-columns: 1fr 2.4fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.memories-left .section-tag {
+    color: var(--gold-dark);
+}
+
+.memories-left .section-heading-dark {
+    color: var(--text-dark);
+}
+
+.memories-desc {
+    font-size: 1.6rem;
+    color: #64748b;
+    margin-bottom: 1.6rem;
+}
+
+.instagram-handle-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--font-nav);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #e1306c;
+}
+
+.instagram-handle-link i {
+    font-size: 2.2rem;
+}
+
+.instagram-handle-link:hover {
+    transform: translateX(5px);
+    color: #c13584;
+}
+
+.memories-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.memory-card {
+    position: relative;
+    border-radius: 1.8rem;
+    overflow: hidden;
+    height: 320px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.memory-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.memory-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 14, 26, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 3rem;
+    opacity: 0;
+    transition: var(--transition-smooth);
+}
+
+.memory-card:hover img {
+    transform: scale(1.08);
+}
+
+.memory-card:hover .memory-overlay {
     opacity: 1;
-    border: 2px solid var(--primary-color);
 }
 
-/* WhatsApp Modal Styles */
+/* =================================================================== */
+/* ===================== LUXURY FOOTER =============================== */
+/* =================================================================== */
+.luxury-footer {
+    background-color: #030a13;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 9rem 0 3rem 0;
+    color: var(--text-silver);
+}
+
+.footer-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+    gap: 5rem;
+    margin-bottom: 7rem;
+}
+
+.footer-logo {
+    display: inline-flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.footer-brand-text {
+    font-size: 1.45rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 2.4rem;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.footer-socials a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-white);
+    font-size: 1.6rem;
+}
+
+.footer-socials a:hover {
+    background: var(--gold-primary);
+    color: #050e1a;
+    border-color: var(--gold-primary);
+    transform: translateY(-3px);
+}
+
+.footer-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 2.2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--gold-primary);
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.footer-links a {
+    font-size: 1.45rem;
+    color: var(--text-muted);
+}
+
+.footer-links a:hover {
+    color: var(--gold-light);
+    padding-left: 5px;
+}
+
+.footer-contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.footer-contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.4rem;
+    font-size: 1.45rem;
+    color: var(--text-muted);
+}
+
+.footer-contact-list li i {
+    color: var(--gold-primary);
+    font-size: 1.6rem;
+    margin-top: 0.3rem;
+}
+
+.footer-bottom-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.35rem;
+    color: #64748b;
+}
+
+.footer-bottom-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* =================================================================== */
+/* ===================== VIDEO MODAL ================================= */
+/* =================================================================== */
+.custom-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 14, 26, 0.88);
+    backdrop-filter: blur(14px);
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-smooth);
+    padding: 2rem;
+}
+
+.custom-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-card {
+    position: relative;
+    background: #000;
+    border-radius: 1.6rem;
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--border-gold);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.modal-close-btn:hover {
+    background: var(--gold-primary);
+    color: #000;
+}
+
+.video-embed-wrapper video {
+    width: 100%;
+    max-height: 75vh;
+    display: block;
+}
+
+/* =================================================================== */
+/* ===================== ÇEREZ & BUTONLAR ============================ */
+/* =================================================================== */
+.luxury-cookie-banner {
+    position: fixed;
+    bottom: 2.5rem;
+    left: 2.5rem;
+    max-width: 480px;
+    background: rgba(10, 25, 47, 0.95);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--border-gold);
+    border-radius: 1.4rem;
+    padding: 1.8rem 2.2rem;
+    box-shadow: var(--shadow-luxury);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.8rem;
+    transform: translateY(120%);
+    transition: var(--transition-smooth);
+}
+
+.luxury-cookie-banner.show {
+    transform: translateY(0);
+}
+
+.cookie-content {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    color: var(--text-silver);
+    font-size: 1.35rem;
+}
+
+.cookie-content i {
+    font-size: 2.4rem;
+    color: var(--gold-primary);
+    flex-shrink: 0;
+}
+
+.btn-cookie-accept {
+    padding: 0.9rem 1.8rem;
+    background: var(--gold-primary);
+    color: #050e1a;
+    font-family: var(--font-nav);
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-radius: 0.8rem;
+    white-space: nowrap;
+}
+
+.btn-cookie-accept:hover {
+    background: var(--gold-light);
+}
+
+/* Yukarı Çık Butonu */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-gold);
+    color: var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-smooth);
+}
+
+.back-to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top-btn:hover {
+    background: var(--gold-primary);
+    color: #050e1a;
+    transform: translateY(-4px);
+}
+
+/* WhatsApp Yüzen Nabız Butonu */
+.whatsapp-float-pulse {
+    position: fixed;
+    bottom: 9rem;
+    right: 3rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25d366;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    z-index: 999;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+    transition: var(--transition-smooth);
+}
+
+.whatsapp-float-pulse::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #25d366;
+    opacity: 0.6;
+    animation: waPulse 2s infinite ease-out;
+    z-index: -1;
+}
+
+.wa-tooltip {
+    position: absolute;
+    right: calc(100% + 1.4rem);
+    background: rgba(5, 14, 26, 0.95);
+    color: #fff;
+    padding: 0.8rem 1.4rem;
+    border-radius: 2rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-fast);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-float-pulse:hover .wa-tooltip {
+    opacity: 1;
+    transform: translateX(-4px);
+}
+
+.whatsapp-float-pulse:hover {
+    transform: scale(1.08);
+}
+
+@keyframes waPulse {
+    0% { transform: scale(1); opacity: 0.7; }
+    100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* WhatsApp Modal */
 .wa-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 100001;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10000;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: var(--transition-smooth);
 }
 
 .wa-modal-overlay.active {
@@ -756,74 +1871,1700 @@ body {
 }
 
 .wa-modal-content {
-    background: var(--light-color);
-    padding: 3rem 2rem;
-    border-radius: 1rem;
+    background: #0f243e;
+    border: 1px solid var(--border-gold);
+    border-radius: 1.8rem;
+    padding: 3.5rem;
+    max-width: 440px;
+    width: 90%;
     text-align: center;
     position: relative;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
-    transform: scale(0.9);
-    transition: transform 0.3s ease;
-}
-
-.wa-modal-overlay.active .wa-modal-content {
-    transform: scale(1);
+    box-shadow: var(--shadow-luxury);
 }
 
 .wa-modal-close {
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
-    font-size: 2.5rem;
-    color: var(--primary-color);
+    font-size: 2.4rem;
+    color: var(--text-silver);
     cursor: pointer;
-    line-height: 1;
-    transition: color 0.2s ease;
-}
-
-.wa-modal-close:hover {
-    color: var(--secondary-color);
 }
 
 .wa-modal-title {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
     font-family: var(--font-heading);
+    font-size: 2.6rem;
+    color: #25d366;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .wa-modal-desc {
-    font-size: 1.4rem;
-    color: var(--dark-color);
-    margin-bottom: 2rem;
+    font-size: 1.45rem;
+    color: var(--text-silver);
+    margin-bottom: 2.5rem;
 }
 
 .wa-modal-options {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.4rem;
 }
 
 .wa-modal-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    font-size: 1.6rem;
-    padding: 1.2rem;
-    border-radius: .5rem;
-    color: #fff;
-    background: #25d366;
-    transition: background 0.3s ease;
+    display: block;
+    padding: 1.4rem 2rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 1rem;
+    color: var(--text-white);
+    font-weight: 600;
+    font-size: 1.45rem;
 }
 
 .wa-modal-btn:hover {
-    background: #128c7e;
+    background: #25d366;
+    color: #fff;
+    border-color: #25d366;
+    transform: translateY(-2px);
+}
+
+/* BLOG SAYFALARI */
+.blog-header-section {
+    background: linear-gradient(rgba(5, 14, 26, 0.85), rgba(5, 14, 26, 0.85)), url('GÖRSELLER/G9.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 15rem 3rem 6rem;
+    text-align: center;
     color: #fff;
 }
 
-.wa-modal-btn i {
-    font-size: 2rem;
+.blog-header-section h1 {
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-white);
 }
+
+.blog-header-section p {
+    font-size: 1.8rem;
+    color: var(--gold-light);
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap: 3rem;
+    max-width: 1280px;
+    margin: 4rem auto;
+    padding: 0 3rem;
+}
+
+.blog-card {
+    background: #0d1e34;
+    border: 1px solid var(--border-glass);
+    border-radius: 1.4rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--border-gold);
+    box-shadow: var(--shadow-luxury);
+}
+
+.blog-card-img {
+    height: 22rem;
+    overflow: hidden;
+}
+
+.blog-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-card-img img {
+    transform: scale(1.08);
+}
+
+.blog-card-body {
+    padding: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.blog-card-date {
+    font-size: 1.3rem;
+    color: var(--gold-primary);
+    margin-bottom: 0.8rem;
+}
+
+.blog-card-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--text-white);
+    margin-bottom: 1.2rem;
+    line-height: 1.35;
+}
+
+.blog-card-summary {
+    font-size: 1.45rem;
+    color: var(--text-silver);
+    line-height: 1.65;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.read-more-btn {
+    align-self: flex-start;
+    color: var(--gold-primary);
+    font-weight: 700;
+    font-size: 1.45rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.read-more-btn:hover {
+    gap: 1rem;
+    color: var(--gold-light);
+}
+
+/* TOUR DETAIL GALLERY */
+#main-tour-image {
+    max-width: 100%;
+    max-height: 520px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1.4rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    display: block;
+    margin: 0 auto;
+}
+
+.gallery-thumbnails {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.gallery-thumbnails img {
+    width: 90px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    opacity: 0.6;
+    border: 2px solid transparent;
+    transition: var(--transition-fast);
+}
+
+.gallery-thumbnails img:hover, 
+.gallery-thumbnails img.active {
+    opacity: 1;
+    border-color: var(--gold-primary);
+}
+
+/* =================================================================== */
+/* ===================== RESPONSIVE TASARIM ========================== */
+/* =================================================================== */
+@media (max-width: 1200px) {
+    .why-us-container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    
+    .why-us-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tours-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .memories-row {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .memories-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-booking-bar {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+    .booking-divider {
+        display: none;
+    }
+    .btn-booking-search {
+        grid-column: span 2;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background: #081426;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2.4rem;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        transition: var(--transition-smooth);
+        z-index: 1000;
+    }
+
+    .navbar.active {
+        right: 0;
+    }
+
+    .btn-header-cta {
+        display: none;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-subtitle-badge {
+        padding-left: 0;
+    }
+    .hero-subtitle-badge::before {
+        display: none;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-trust-badges {
+        justify-content: center;
+    }
+
+    .hero-side-controls {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 4rem;
+        gap: 4rem;
+    }
+
+    .quick-booking-box {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 3.5rem 2.5rem;
+    }
+
+    .qb-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .yacht-card-hero {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 55%;
+    }
+
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .hero-title .script-accent {
+        font-size: 5.5rem;
+    }
+
+    .why-us-grid,
+    .tours-cards-grid,
+    .memories-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-booking-bar {
+        grid-template-columns: 1fr;
+    }
+    .btn-booking-search {
+        grid-column: span 1;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .luxury-cookie-banner {
+        left: 1.5rem;
+        right: 1.5rem;
+        bottom: 1.5rem;
+        flex-direction: column;
+    }
+}
+
+
+/* =================================================================== */
+/* ===================== GELİŞMİŞ MOBİL & TABLET STİLLERİ ============ */
+/* =================================================================== */
+
+.mobile-nav-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(3, 10, 19, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-smooth);
+}
+
+.mobile-nav-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 992px) {
+    .site-header {
+        padding: 1.4rem 0;
+        background: rgba(5, 14, 26, 0.96);
+        backdrop-filter: blur(12px);
+    }
+
+    .header-container {
+        padding: 0 1.8rem;
+    }
+
+    .logo-symbol {
+        width: 36px;
+        height: 36px;
+    }
+
+    .brand-title {
+        font-size: 1.7rem;
+        letter-spacing: 0.12rem;
+    }
+
+    .brand-sub {
+        font-size: 0.85rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        right: -320px;
+        width: 280px;
+        height: 100vh;
+        background: #071527;
+        border-left: 1px solid var(--border-gold);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 8rem 2.5rem 3rem 2.5rem;
+        gap: 2rem;
+        box-shadow: -15px 0 35px rgba(0, 0, 0, 0.6);
+        transition: var(--transition-smooth);
+        z-index: 999;
+    }
+
+    .navbar.active {
+        right: 0;
+    }
+
+    .navbar .nav-link {
+        font-size: 1.5rem;
+        width: 100%;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .header-right {
+        gap: 1.2rem;
+    }
+
+    .lang-current-btn {
+        padding: 0.6rem 1rem;
+        font-size: 1.2rem;
+    }
+
+    .header-icon-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.6rem;
+    }
+
+    .hero-section {
+        padding: 11rem 0 6rem 0;
+        min-height: auto;
+    }
+
+    .hero-container {
+        padding: 0 1.8rem;
+    }
+
+    .hero-title {
+        font-size: 3.8rem;
+    }
+
+    .hero-title .script-accent {
+        font-size: 5.6rem;
+    }
+
+    .hero-desc {
+        font-size: 1.55rem;
+        margin-bottom: 2.8rem;
+    }
+
+    .hero-actions {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .btn-hero-primary,
+    .btn-hero-secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 1.4rem 2rem;
+        font-size: 1.35rem;
+    }
+
+    .hero-trust-badges {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+        width: 100%;
+        padding-top: 2rem;
+    }
+
+    .hero-side-controls {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3.5rem;
+        gap: 3rem;
+    }
+
+    .hero-video-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hero-booking-bar-wrapper {
+        margin-top: 3rem;
+        padding: 0 1.5rem;
+    }
+
+    .hero-booking-bar {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+        gap: 1.4rem;
+        border-radius: 1.6rem;
+    }
+
+    .booking-divider {
+        display: none;
+    }
+
+    .booking-field-item {
+        padding: 0.8rem 0;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .btn-booking-search {
+        width: 100%;
+        padding: 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    .why-us-section,
+    .tours-section,
+    .yacht-showcase-section,
+    .memories-section {
+        padding: 7rem 0;
+    }
+
+    .why-us-container,
+    .tours-container,
+    .yacht-container,
+    .memories-container {
+        padding: 0 1.8rem;
+    }
+
+    .section-heading-dark {
+        font-size: 3.2rem;
+    }
+
+    .tours-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .tours-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .tour-route-card {
+        height: 320px;
+    }
+
+    .quick-booking-box {
+        padding: 3rem 2rem;
+    }
+
+    .qb-title {
+        font-size: 2.6rem;
+    }
+
+    .btn-qb-submit {
+        width: 100%;
+        padding: 1.4rem;
+    }
+
+    .yacht-card-hero {
+        padding: 2.4rem 1.8rem;
+    }
+
+    .yacht-image-side img {
+        height: 280px;
+    }
+
+    .yacht-title {
+        font-size: 3rem;
+    }
+
+    .yacht-specs-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .spec-box {
+        padding: 1.2rem 0.6rem;
+    }
+
+    .spec-box i {
+        font-size: 1.8rem;
+    }
+
+    .spec-box strong {
+        font-size: 1.8rem;
+    }
+
+    .memories-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+
+    .memory-card {
+        height: 200px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .footer-bottom-bar {
+        flex-direction: column;
+        gap: 1.2rem;
+        text-align: center;
+    }
+
+    .whatsapp-float-pulse {
+        bottom: 2.5rem;
+        right: 2rem;
+        width: 52px;
+        height: 52px;
+        font-size: 2.6rem;
+    }
+
+    .back-to-top-btn {
+        bottom: 8.8rem;
+        right: 2rem;
+        width: 42px;
+        height: 42px;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 52%;
+    }
+
+    .hero-title {
+        font-size: 3.2rem;
+    }
+
+    .hero-title .script-accent {
+        font-size: 4.8rem;
+    }
+
+    .memories-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-card {
+        height: 240px;
+    }
+
+    .spec-box strong {
+        font-size: 1.6rem;
+    }
+}
+
+/* =================================================================== */
+/* ================= KATEGORİ FİLTRE ROZETLERİ (PILLS) ============== */
+/* =================================================================== */
+.category-filter-section {
+    padding: 2.5rem 2rem 1rem;
+    background: var(--bg-light);
+    position: relative;
+    z-index: 10;
+}
+
+.category-filter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.category-filter-container::-webkit-scrollbar {
+    display: none;
+}
+
+.category-filter-pills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: nowrap;
+    min-width: max-content;
+}
+
+.filter-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.45rem;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    background: #ffffff;
+    color: var(--text-dark);
+    border: 1.5px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    white-space: nowrap;
+}
+
+.filter-pill .pill-icon {
+    font-size: 1.6rem;
+}
+
+.filter-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.filter-pill.active {
+    background: var(--navy-main);
+    color: #ffffff;
+    border-color: var(--navy-main);
+    box-shadow: 0 6px 20px rgba(10, 25, 47, 0.25);
+}
+
+.filter-pill.pill-sunset {
+    border-color: #fef3c7;
+    background: #fffbeb;
+    color: #b45309;
+}
+.filter-pill.pill-sunset:hover, .filter-pill.pill-sunset.active {
+    background: linear-gradient(135deg, #d4af37, #aa861b);
+    color: #ffffff;
+    border-color: #aa861b;
+}
+
+.filter-pill.pill-morning {
+    border-color: #e0f2fe;
+    background: #f0f9ff;
+    color: #0369a1;
+}
+.filter-pill.pill-morning:hover, .filter-pill.pill-morning.active {
+    background: #0284c7;
+    color: #ffffff;
+    border-color: #0284c7;
+}
+
+.filter-pill.pill-day {
+    border-color: #dcfce7;
+    background: #f0fdf4;
+    color: #15803d;
+}
+.filter-pill.pill-day:hover, .filter-pill.pill-day.active {
+    background: #16a34a;
+    color: #ffffff;
+    border-color: #16a34a;
+}
+
+.filter-pill.pill-birthday {
+    border-color: #fce7f3;
+    background: #fdf2f8;
+    color: #be185d;
+}
+.filter-pill.pill-birthday:hover, .filter-pill.pill-birthday.active {
+    background: #db2777;
+    color: #ffffff;
+    border-color: #db2777;
+}
+
+.filter-pill.pill-vip {
+    border-color: #fef3c7;
+    background: #fffbeb;
+    color: #b45309;
+}
+.filter-pill.pill-vip:hover, .filter-pill.pill-vip.active {
+    background: #d97706;
+    color: #ffffff;
+    border-color: #d97706;
+}
+
+/* =================================================================== */
+/* ============= POPÜLER LÜKS YAT KİRALAMA BÖLÜMÜ (Görsel 2) ======== */
+/* =================================================================== */
+.popular-yachts-section {
+    padding: 5rem 2rem 6rem;
+    background: var(--bg-light);
+    position: relative;
+}
+
+.popular-yachts-section .section-heading-dark,
+.special-services-section .section-heading-dark {
+    color: #050e1a !important;
+    font-size: 3.6rem;
+}
+
+.popular-yachts-container {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.popular-yachts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.2rem;
+    margin-top: 3.5rem;
+}
+
+.title-accent-line {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #d4af37, #ecd580);
+    border-radius: 2px;
+    margin-top: 1.2rem;
+}
+
+.luxury-yacht-card {
+    background: #ffffff;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+}
+
+.luxury-yacht-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(10, 25, 47, 0.12);
+    border-color: rgba(212, 175, 55, 0.35);
+}
+
+.yacht-card-slider {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: #0f172a;
+    overflow: hidden;
+}
+
+.slider-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.slide-img.active {
+    opacity: 1;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 2.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 4;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 4px 8px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+}
+
+.slider-dots .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.slider-dots .dot.active {
+    background: #ffffff;
+    width: 16px;
+    border-radius: 10px;
+}
+
+.floating-title-pill {
+    position: absolute;
+    bottom: 0.6rem;
+    left: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, #0a192f 0%, #162e4e 100%);
+    color: #ffffff;
+    padding: 0.8rem 1.2rem;
+    border-radius: 1.2rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.yacht-card-content {
+    padding: 1.8rem 1.6rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 1.4rem;
+}
+
+.features-pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.feature-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #0a192f;
+    color: #f8fafc;
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 0.6rem 0.9rem;
+    border-radius: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    flex: 1 1 calc(50% - 0.6rem);
+    min-width: 0;
+    box-sizing: border-box;
+    white-space: normal;
+    word-break: normal;
+    line-height: 1.25;
+}
+
+.feature-pill span {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+}
+
+.feature-pill i {
+    color: var(--gold-light);
+    font-size: 1.15rem;
+    flex-shrink: 0;
+}
+
+.spec-summary-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 0.8rem 0.4rem;
+    text-align: center;
+}
+
+.spec-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    position: relative;
+}
+
+.spec-col:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: #e2e8f0;
+}
+
+.spec-col-label {
+    font-size: 1.05rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.spec-col-val {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.spec-col-val.price-val {
+    color: #b45309;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.google-rating-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 1rem;
+    font-size: 1.25rem;
+}
+
+.stars-row {
+    color: #f59e0b;
+    font-size: 1.15rem;
+    display: flex;
+    gap: 2px;
+}
+
+.rating-score {
+    font-weight: 700;
+    color: #0f172a;
+    margin-left: 0.4rem;
+}
+
+.review-count {
+    color: #64748b;
+    font-size: 1.15rem;
+    margin-right: auto;
+    margin-left: 0.3rem;
+}
+
+.google-badge {
+    font-weight: 600;
+    color: #475569;
+    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.google-badge i {
+    color: #ea4335;
+}
+
+.card-action-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-top: auto;
+}
+
+.btn-card-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: #22c55e;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 0.9rem 0.6rem;
+    border-radius: 1rem;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.25);
+    text-align: center;
+}
+
+.btn-card-whatsapp:hover {
+    background: #16a34a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(34, 197, 94, 0.35);
+}
+
+.btn-card-details {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: #e0f2fe;
+    color: #0284c7;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 0.9rem 0.6rem;
+    border-radius: 1rem;
+    transition: all 0.25s ease;
+    text-align: center;
+}
+
+.btn-card-details:hover {
+    background: #bae6fd;
+    color: #0369a1;
+    transform: translateY(-2px);
+}
+
+/* =================================================================== */
+/* ============= ÖZEL HİZMETLER & DENEYİMLER (Görsel 1) ============= */
+/* =================================================================== */
+.special-services-section {
+    padding: 6rem 2rem 7rem;
+    background: #ffffff;
+    position: relative;
+}
+
+.special-services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-gold, .text-orange {
+    color: #c49a2c;
+    background: linear-gradient(135deg, #d4af37 0%, #aa861b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.section-title-wrap.text-center {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-title-wrap.text-center .section-text-muted {
+    max-width: 600px;
+    margin: 1rem auto 0;
+    font-size: 1.55rem;
+}
+
+.special-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.8rem;
+    margin-top: 4.5rem;
+}
+
+.special-service-card {
+    background: #ffffff;
+    border-radius: 2.2rem;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+    border: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.special-service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(10, 25, 47, 0.12);
+    border-color: rgba(212, 175, 55, 0.35);
+}
+
+.service-card-media {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+}
+
+.service-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.special-service-card:hover .service-card-media img {
+    transform: scale(1.06);
+}
+
+.service-rating-badge {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    color: var(--text-dark);
+}
+
+.service-rating-badge i {
+    color: #f59e0b;
+}
+
+.service-rating-badge strong {
+    font-weight: 700;
+}
+
+.service-rating-badge span {
+    color: #64748b;
+    font-weight: 500;
+    font-size: 1.15rem;
+}
+
+.service-card-body {
+    padding: 2.2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 1.6rem;
+}
+
+.service-card-title {
+    font-family: var(--font-heading);
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.35;
+}
+
+.service-badges-row {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.badge-tag {
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.5rem 1.1rem;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+.btn-luxury-gold, .btn-orange-cta {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, #ecd580 0%, #d4af37 50%, #aa861b 100%);
+    color: #050e1a;
+    font-weight: 800;
+    font-size: 1.45rem;
+    letter-spacing: 0.3px;
+    padding: 1.3rem 1.8rem;
+    border-radius: 1.4rem;
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    text-align: center;
+}
+
+.btn-luxury-gold:hover, .btn-orange-cta:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #ecd580 50%, #d4af37 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5);
+    color: #050e1a;
+}
+
+/* =================================================================== */
+/* ============= NELER DAHİL? BLOKLARI (Görsel 1) =================== */
+/* =================================================================== */
+.inclusions-overview-wrap {
+    margin-top: 5rem;
+    padding: 4rem 3rem;
+    background: #ffffff;
+    border-radius: 2.4rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.inclusions-header {
+    margin-bottom: 3.5rem;
+}
+
+.inclusions-title {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--navy-deep);
+    margin-top: 0.8rem;
+}
+
+.center-accent {
+    margin: 1.2rem auto 0;
+}
+
+.inclusions-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.8rem;
+}
+
+.inclusion-status-card {
+    background: #f8fafc;
+    border-radius: 1.8rem;
+    padding: 2.2rem 1.4rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.inclusion-status-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(10, 25, 47, 0.08);
+    border-color: rgba(212, 175, 55, 0.4);
+    background: #ffffff;
+}
+
+.inc-icon-box {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.4rem;
+    position: relative;
+    margin-bottom: 1.4rem;
+}
+
+.inc-icon-box.bg-food {
+    background: #fef3c7;
+    color: #d97706;
+}
+.inc-icon-box.bg-drinks {
+    background: #e0f2fe;
+    color: #0284c7;
+}
+.inc-icon-box.bg-cocktail {
+    background: #fce7f3;
+    color: #be185d;
+}
+.inc-icon-box.bg-bring-alcohol {
+    background: #fef9c3;
+    color: #ca8a04;
+}
+.inc-icon-box.bg-decor {
+    background: #f3e8ff;
+    color: #9333ea;
+}
+.inc-icon-box.bg-transfer {
+    background: #e2e8f0;
+    color: #475569;
+}
+
+.status-badge {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.status-badge.check {
+    background: #22c55e;
+}
+.status-badge.cross {
+    background: #ef4444;
+}
+
+.inc-label {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.inc-status {
+    font-size: 1.45rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.inc-status.included {
+    color: #16a34a;
+}
+.inc-status.excluded {
+    color: #dc2626;
+}
+
+.inc-hint {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    line-height: 1.3;
+}
+
+/* =================================================================== */
+/* ============= CANLI FİYAT HESAPLAMA (Görsel 1) =================== */
+/* =================================================================== */
+.price-calc-container-wrap {
+    margin-top: 4rem;
+}
+
+.price-calc-box {
+    background: linear-gradient(145deg, #050e1a 0%, #0a192f 100%);
+    border-radius: 2.4rem;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 15px 40px rgba(5, 14, 26, 0.4);
+    overflow: hidden;
+}
+
+.calc-header-strip {
+    background: linear-gradient(90deg, rgba(212, 175, 55, 0.15) 0%, rgba(236, 213, 128, 0.05) 100%);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 1.8rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.calc-title-side {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.calc-title-side i {
+    color: var(--gold-light);
+    font-size: 2.2rem;
+}
+
+.calc-title-side h3 {
+    font-family: var(--font-heading);
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.calc-tagline {
+    color: var(--gold-light);
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.calc-body-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.2rem;
+    padding: 3rem 3rem 2rem;
+}
+
+.calc-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.calc-input-group label {
+    color: #e2e8f0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.calc-input-group label i {
+    color: var(--gold-light);
+}
+
+.calc-select {
+    background: #0f243e;
+    color: #ffffff;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 1.2rem 1.4rem;
+    border-radius: 1.2rem;
+    font-size: 1.35rem;
+    font-weight: 600;
+    outline: none;
+    transition: all 0.25s;
+    cursor: pointer;
+}
+
+.calc-select:focus {
+    border-color: var(--gold-light);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.calc-select option {
+    background: #0a192f;
+    color: #ffffff;
+}
+
+.calc-result-bar {
+    background: rgba(255, 255, 255, 0.04);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2.4rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.calc-price-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.calc-total-label {
+    color: #94a3b8;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.calc-price-display {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+}
+
+.calc-currency {
+    color: var(--gold-light);
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+#calc-total-price {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ffffff 0%, #ecd580 60%, #d4af37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.calc-price-note {
+    color: #cbd5e1;
+    font-size: 1.2rem;
+    max-width: 550px;
+    line-height: 1.4;
+}
+
+.btn-calc-book {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: #ffffff;
+    font-size: 1.45rem;
+    font-weight: 700;
+    padding: 1.4rem 2.4rem;
+    border-radius: 1.4rem;
+    box-shadow: 0 8px 25px rgba(34, 197, 94, 0.35);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    white-space: nowrap;
+    text-align: center;
+}
+
+.btn-calc-book:hover {
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(34, 197, 94, 0.5);
+    color: #ffffff;
+}
+
+/* =================================================================== */
+/* ===================== RESPONSIVE AYARLAR ========================= */
+/* =================================================================== */
+@media (max-width: 1100px) {
+    .popular-yachts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .special-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .inclusions-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .calc-body-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .calc-result-bar {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .calc-price-display {
+        justify-content: center;
+    }
+
+    .calc-price-note {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .popular-yachts-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .special-services-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .inclusions-overview-wrap {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .inclusions-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+
+    .calc-header-strip {
+        padding: 1.5rem;
+        flex-direction: column;
+        gap: 0.6rem;
+        text-align: center;
+    }
+
+    .calc-body-grid {
+        padding: 2rem 1.5rem 1.5rem;
+    }
+
+    .calc-result-bar {
+        padding: 2rem 1.5rem;
+    }
+
+    .popular-yachts-section .section-heading-dark,
+    .special-services-section .section-heading-dark {
+        font-size: 2.8rem;
+    }
+
+    .category-filter-section {
+        padding: 2rem 1.5rem 1rem;
+    }
+
+    .filter-pill {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.35rem;
+    }
+
+    .service-card-title {
+        font-size: 1.9rem;
+    }
+
+    .btn-luxury-gold, .btn-orange-cta {
+        font-size: 1.35rem;
+        padding: 1.2rem 1.4rem;
+    }
+}
+

@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="site_title">Alanya VIP Yacht - Infinity Yacht | Gemi Turu Şirketi</title>
-    <meta name="description" data-translate="site_description" content="Alanya'nın Mavi Bayrak ödüllü lüks yatı Infinity ile unutulmaz sabah, gün batımı ve özel turları deneyimleyin.">
+    <title data-translate="site_title">ALANYA VİP YACHTS - Infinity | Lüks Yat Kiralama & Turlar</title>
+    <meta name="description" data-translate="site_description" content="Alanya'nın eşsiz mavi sularında lüks yat kiralama, özel gün batımı, sabah ve günlük turları deneyimleyin.">
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
     
     <link rel="stylesheet" href="style.css">
@@ -17,90 +19,1231 @@
 </head>
 <body>
 
-    <div id="preloader"><div class="loader-logo">INFINITY YACHT</div></div>
-
-    <header id="header">
-        <a href="index.html" class="logo">INFINITY YACHT</a>
-        <nav class="navbar">
-            <a href="#hero" data-translate="nav_home">Ana Sayfa</a>
-            <a href="#tours" data-translate="nav_tours">Turlarımız</a>
-            <a href="#yacht" data-translate="nav_yacht">Yatımız</a>
-            <a href="blog.html" data-translate="nav_blog">Blog</a>
-            <a href="#contact" data-translate="nav_contact">İletişim</a>
-        </nav>
-        <div class="header-right">
-            <div class="language-switcher">
-                <a href="#" class="lang-btn" data-lang="tr"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/tr.svg" alt="Türkçe"></a>
-                <a href="#" class="lang-btn" data-lang="en"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/gb.svg" alt="English"></a>
-                <a href="#" class="lang-btn" data-lang="ru"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/ru.svg" alt="Русский"></a>
-            </div>
-            <div id="menu-bars" class="fas fa-bars"></div>
+    <!-- Yükleme Ekranı -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loader-icon"><i class="fas fa-ship"></i></div>
+            <div class="loader-logo">INFINITY VİP YACHTS</div>
+            <div class="loader-tagline" data-translate="loader_tagline">ALANYA LUXURY CHARTER</div>
+            <div class="loader-bar"><span class="loader-progress"></span></div>
         </div>
-    </header>
-
-    <section id="hero">
-        <img id="hero-image" src="GÖRSELLER/G9.jpg" alt="Alanya VIP Yacht">
-        <div class="hero-content">
-            <h1 data-translate="hero_title">ALANYA VIP YACHT</h1>
-            <p data-translate="hero_slogan">EVERY SUMMER IS A NEW STORY</p>
-            <div style="display: flex; gap: 1rem; justify-content: center;">
-                <a href="#tours" class="btn" data-translate="hero_button">Turları Keşfet</a>
-                <a href="https://wa.me/905558082727" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="tours" class="section-padding">
-        <h2 class="section-title" data-translate="tours_section_title">Turlarımız</h2>
-        <div class="tour-container">
-            <a href="tur-detay.html?tur=sabah" class="tour-card-link"><div class="tour-card animate-on-scroll"><img src="GÖRSELLER/G9.jpg" alt="Sabah Turu" loading="lazy"><div class="card-overlay"><i class="fas fa-arrow-right"></i><span data-translate="see_details">Detayları Gör</span></div><h3 data-translate="morning_tour_title">Morning Tour</h3></div></a>
-            <a href="tur-detay.html?tur=gunbatimi" class="tour-card-link"><div class="tour-card animate-on-scroll"><img src="GÖRSELLER/G2.jpg" alt="Gün Batımı Turu" loading="lazy"><div class="card-overlay"><i class="fas fa-arrow-right"></i><span data-translate="see_details">Detayları Gör</span></div><h3 data-translate="sunset_tour_title">Sunset Tour</h3></div></a>
-            <a href="tur-detay.html?tur=gunluk" class="tour-card-link"><div class="tour-card animate-on-scroll"><img src="GÖRSELLER/G10.jpg" alt="Günlük Tur" loading="lazy"><div class="card-overlay"><i class="fas fa-arrow-right"></i><span data-translate="see_details">Detayları Gör</span></div><h3 data-translate="daily_tour_title">Daily Tour</h3></div></a>
-            <a href="tur-detay.html?tur=kiralama" class="tour-card-link"><div class="tour-card animate-on-scroll"><img src="GÖRSELLER/G1.jpg" alt="Özel Kiralama" loading="lazy"><div class="card-overlay"><i class="fas fa-arrow-right"></i><span data-translate="see_details">Detayları Gör</span></div><h3 data-translate="charter_tour_title">Charter Tour</h3></div></a>
-        </div>
-    </section>
-
-    <section id="yacht" class="section-padding">
-         <h2 class="section-title" data-translate="yacht_section_title">Infinity Yacht</h2>
-         <div class="yacht-content animate-on-scroll">
-            <div class="yacht-image"><img src="GÖRSELLER/G11.jpg" alt="Infinity Yacht" loading="lazy"></div>
-            <div class="yacht-info">
-                <h3 data-translate="yacht_subtitle">Alanya'nın Mavi Bayrak Ödüllü Gururu</h3>
-                <p data-translate="yacht_description">Infinity, lüks tasarımı, geniş güvertesi ve modern donanımı ile size konfor ve güvenliği bir arada sunar. VIP hizmet anlayışıyla tasarlanan yatımız, özel anlarınızı unutulmaz kılmak için her detayı düşünülerek hazırlanmıştır.</p>
-                <div class="features-counter">
-                    <div class="feature-item-counter"><i class="fas fa-users"></i><span class="counter" data-count="12">0</span><p data-translate="feature_capacity">Kişi Kapasite</p></div>
-                    <div class="feature-item-counter"><i class="fas fa-crown"></i><span class="award-text" data-translate="feature_award">Lüks Donanım</span><p data-translate="feature_award_desc">Modern Yat</p></div>
-                    <div class="feature-item-counter"><i class="fas fa-user-tie"></i><span class="award-text" data-translate="feature_speed">Deneyimli Kaptan</span><p>Profesyonel Ekip</p></div>
-                </div>
-            </div>
-         </div>
-    </section>
-
-    <footer id="contact">
-        <div class="footer-content">
-            <h3 data-translate="contact_title">Bize Ulaşın</h3>
-            <p data-translate="contact_text">Hayalinizdeki turu planlamak için bizimle iletişime geçin.</p>
-            <ul class="socials">
-                <li><a href="https://www.instagram.com/infinityyacht1" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="https://wa.me/905558082727" target="_blank" class="whatsapp-footer-link"><i class="fab fa-whatsapp"></i></a></li>
-                <li><a href="tel:+905558082727" class="phone-footer-link"><i class="fas fa-phone"></i></a></li>
-            </ul>
-        </div>
-        <div class="footer-bottom"><p data-translate="footer_copyright">&copy; 2025 Alanya VIP Yacht. Tüm hakları saklıdır.</p></div>
-    </footer>
-    
-    <div id="cookie-banner">
-        <p data-translate="cookie_text">Size daha iyi hizmet sunabilmek için sitemizde çerezler kullanıyoruz.</p>
-        <button id="accept-cookies" class="btn" data-translate="cookie_button">Kabul Et</button>
     </div>
 
-    <a href="#" id="back-to-top" class="fas fa-arrow-up"></a>
-    
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/905558082727" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <!-- Header / Navigasyon -->
+    <header id="header" class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-symbol">
+    <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Luxury Diamond Outer Ring -->
+        <circle cx="27" cy="27" r="25" stroke="url(#goldGradient)" stroke-width="1.5" stroke-dasharray="4 2" opacity="0.6"/>
+        <circle cx="27" cy="27" r="22" stroke="url(#goldGradient)" stroke-width="1" opacity="0.3"/>
+        <!-- Infinity Wave Base -->
+        <path d="M12 33C15 29 19 29 23 33C27 37 31 37 35 33C39 29 43 29 45 33" stroke="url(#goldGradient)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M15 37C18 34 22 34 25 37C28 40 32 40 36 37C39 34 41 34 43 37" stroke="url(#goldGradient)" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+        <!-- Luxury Yacht Silhouette -->
+        <path d="M14 29L27 12L40 29H14Z" fill="url(#goldGradientLight)" fill-opacity="0.15" stroke="url(#goldGradient)" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M27 12V29" stroke="url(#goldGradient)" stroke-width="1.8"/>
+        <!-- Crown Star at Top -->
+        <polygon points="27,7 28.5,10.5 32,10.5 29,12.5 30,16 27,14 24,16 25,12.5 22,10.5 25.5,10.5" fill="url(#goldGradient)"/>
+        <!-- Gradients -->
+        <defs>
+            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ecd580"/>
+                <stop offset="50%" stop-color="#d4af37"/>
+                <stop offset="100%" stop-color="#aa861b"/>
+            </linearGradient>
+            <linearGradient id="goldGradientLight" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#d4af37"/>
+            </linearGradient>
+        </defs>
+    </svg>
+</div>
+                <div class="logo-text">
+                    <span class="brand-title">INFINITY</span>
+                    <span class="brand-sub">VİP YACHTS</span>
+                </div>
+            </a>
+
+            <nav class="navbar" id="main-nav">
+                <a href="#hero" class="nav-link active" data-translate="nav_home">ANASAYFA</a>
+                <a href="#popular-yachts" class="nav-link" data-translate="nav_yacht">YATLARIMIZ</a>
+                <a href="#special-services" class="nav-link" data-translate="nav_services">HİZMETLERİMİZ</a>
+                <a href="#tours" class="nav-link" data-translate="nav_tours">TURLAR</a>
+                <a href="#why-us" class="nav-link" data-translate="nav_about">HAKKIMIZDA</a>
+                <a href="blog.html" class="nav-link" data-translate="nav_blog">BLOG</a>
+                <a href="#contact" class="nav-link" data-translate="nav_contact">İLETİŞİM</a>
+            </nav>
+
+            <div class="header-right">
+                <!-- Dil Seçici -->
+                <div class="language-dropdown">
+                    <button class="lang-current-btn" id="lang-menu-btn" aria-label="Dil Seçimi">
+                        <img id="current-lang-flag" src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/tr.svg" alt="TR">
+                        <span id="current-lang-code">TR</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="lang-dropdown-menu" id="lang-dropdown-menu">
+                        <a href="#" class="lang-btn" data-lang="tr"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/tr.svg" alt="Türkçe"> Türkçe</a>
+                        <a href="#" class="lang-btn" data-lang="en"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/gb.svg" alt="English"> English</a>
+                        <a href="#" class="lang-btn" data-lang="de"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/de.svg" alt="Deutsch"> Deutsch</a>
+                        <a href="#" class="lang-btn" data-lang="ru"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/ru.svg" alt="Русский"> Русский</a>
+                        <a href="#" class="lang-btn" data-lang="pl"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/pl.svg" alt="Polski"> Polski</a>
+                        <a href="#" class="lang-btn" data-lang="sv"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/se.svg" alt="Svenska"> Svenska</a>
+                        <a href="#" class="lang-btn" data-lang="no"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/no.svg" alt="Norsk"> Norsk</a>
+                    </div>
+                </div>
+
+                <!-- Hızlı WhatsApp İkonu -->
+                <a href="https://wa.me/905558082727" class="header-icon-btn wa-link" title="WhatsApp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+                <!-- Rezervasyon Yap Butonu -->
+                <a href="#quick-booking" class="btn-header-cta" data-translate="header_cta">REZERVASYON YAP</a>
+
+                <!-- Mobil Menü Butonu -->
+                <button class="mobile-menu-toggle" id="menu-bars" aria-label="Menüyü Aç">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-nav-backdrop" id="mobile-backdrop"></div>
+    </header>
+
+    <!-- HERO SECTION (Görsel 1 & Görsel 3 Birleşimi) -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-wrapper">
+            <img id="hero-image" class="hero-bg-img" src="GÖRSELLER/G9.jpg" alt="ALANYA VİP YACHTS Cruise">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-subtitle-badge" data-translate="hero_tagline">ALANYA'DA MAVİNİN EN ÖZEL HALİ</div>
+                <h1 class="hero-title">
+                    <span data-translate="hero_title_part1">Alanya’da Lüks ve Özgürlüğün</span>
+                    <span class="script-accent" data-translate="hero_title_part2">Tadını Çıkarın</span>
+                </h1>
+                <p class="hero-desc" data-translate="hero_desc">
+                    Akdeniz’in eşsiz maviliğinde, konforlu ve özel yatlarımızla unutulmaz anlar yaşayın.
+                </p>
+
+                <!-- Hero Aksiyon Butonları -->
+                <div class="hero-actions">
+                    <a href="#quick-booking" class="btn-hero-primary">
+                        <span data-translate="hero_btn_book">HEMEN REZERVASYON YAP</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#tours" class="btn-hero-secondary">
+                        <span data-translate="hero_btn_explore">TURLARI KEŞFEDİN</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Güven Rozetleri (Görsel 3) -->
+                <div class="hero-trust-badges">
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class="fas fa-user-shield"></i></div>
+                        <div class="trust-text">
+                            <strong data-translate="trust_team_title">Profesyonel Ekip</strong>
+                            <span data-translate="trust_team_desc">Deneyimli & güler yüzlü</span>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class="fas fa-shield-halved"></i></div>
+                        <div class="trust-text">
+                            <strong data-translate="trust_safe_title">Güvenli & Sigortalı</strong>
+                            <span data-translate="trust_safe_desc">Tam güvence</span>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class="fas fa-headset"></i></div>
+                        <div class="trust-text">
+                            <strong data-translate="trust_support_title">7/24 Destek</strong>
+                            <span data-translate="trust_support_desc">Her zaman yanınızdayız</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sağ Video & Slider Kontrolleri -->
+            <div class="hero-side-controls">
+                <!-- Video Oynatma Rozeti (Görsel 3) -->
+                <button class="hero-video-circle" id="open-video-modal" aria-label="Videoyu İzle">
+                    <div class="circle-rotating-text">
+                        <svg viewBox="0 0 100 100" width="100%" height="100%">
+                            <defs>
+                                <path id="textPath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
+                            </defs>
+                            <text font-size="9" fill="currentColor" letter-spacing="2">
+                                <textPath href="#textPath" startOffset="0%">• ALANYA'YI KEŞFET • VİDEOYU İZLE </textPath>
+                            </text>
+                        </svg>
+                    </div>
+                    <div class="circle-play-btn"><i class="fas fa-play"></i></div>
+                </button>
+
+                <!-- Slider Sayacı & Okları (Görsel 1) -->
+                <div class="hero-slider-pagination">
+                    <div class="slider-numbers">
+                        <span class="active-slide">01</span>
+                        <span class="slider-line"></span>
+                        <span class="total-slides">03</span>
+                    </div>
+                    <div class="slider-nav-arrows">
+                        <button class="slider-arrow prev" id="hero-prev" aria-label="Önceki"><i class="fas fa-chevron-left"></i></button>
+                        <button class="slider-arrow next" id="hero-next" aria-label="Sonraki"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HERO YÜZEN ARAMA & HIZLI REZERVASYON ÇUBUĞU (Görsel 3) -->
+        <div class="hero-booking-bar-wrapper">
+            <div class="hero-booking-bar">
+                <div class="booking-field-item">
+                    <div class="field-icon"><i class="fas fa-location-dot"></i></div>
+                    <div class="field-content">
+                        <label data-translate="bar_location_label">NEREDEN</label>
+                        <span class="field-val" data-translate="bar_location_val">Alanya Limanı</span>
+                    </div>
+                </div>
+                <div class="booking-divider"></div>
+
+                <div class="booking-field-item">
+                    <div class="field-icon"><i class="far fa-calendar-alt"></i></div>
+                    <div class="field-content">
+                        <label data-translate="bar_date_label">TARİH</label>
+                        <input type="date" id="hero-bar-date" class="bar-input-date" />
+                    </div>
+                </div>
+                <div class="booking-divider"></div>
+
+                <div class="booking-field-item">
+                    <div class="field-icon"><i class="fas fa-user-group"></i></div>
+                    <div class="field-content">
+                        <label data-translate="bar_guests_label">KİŞİ SAYISI</label>
+                        <select id="hero-bar-guests" class="bar-select">
+                            <option value="1-4">1-4 Misafir</option>
+                            <option value="5-8" selected>5-8 Misafir</option>
+                            <option value="9-12">9-12 Misafir</option>
+                            <option value="VİP Özel">VİP Özel Grup (12+)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="booking-divider"></div>
+
+                <div class="booking-field-item">
+                    <div class="field-icon"><i class="fas fa-anchor"></i></div>
+                    <div class="field-content">
+                        <label data-translate="bar_type_label">YAT / TUR TİPİ</label>
+                        <select id="hero-bar-type" class="bar-select">
+                            <option value="Tümü" data-translate="bar_type_all">Tümü</option>
+                            <option value="Sabah Turu" data-translate="morning_tour_title">Sabah Turu</option>
+                            <option value="Gün Batımı Turu" data-translate="sunset_tour_title">Gün Batımı Turu</option>
+                            <option value="Günlük Tur" data-translate="daily_tour_title">Günlük Tur</option>
+                            <option value="Özel VİP Kiralama" data-translate="charter_tour_title">Özel Kiralama</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="btn-booking-search" id="hero-bar-search-btn">
+                    <span data-translate="bar_search_btn">YAT ARA</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- KATEGORİ FİLTRE ROZETLERİ (Görsel 1 Üst Kısım) -->
+    <section class="category-filter-section">
+        <div class="category-filter-container">
+            <div class="category-filter-pills" id="category-pills">
+                <button class="filter-pill active" data-category="all">
+                    <span class="pill-icon"><i class="fas fa-ship"></i></span>
+                    <span data-translate="filter_all">Tüm Seçenekler</span>
+                </button>
+                <button class="filter-pill pill-sunset" data-category="sunset">
+                    <span class="pill-icon">🌅</span>
+                    <span data-translate="filter_sunset">Sunset Rental</span>
+                </button>
+                <button class="filter-pill pill-morning" data-category="morning">
+                    <span class="pill-icon">⚓</span>
+                    <span data-translate="filter_morning">Morning Rental</span>
+                </button>
+                <button class="filter-pill pill-day" data-category="day">
+                    <span class="pill-icon">☀️</span>
+                    <span data-translate="filter_day">Day Rental</span>
+                </button>
+                <button class="filter-pill pill-birthday" data-category="birthday">
+                    <span class="pill-icon">🎁</span>
+                    <span data-translate="filter_birthday">Happy Birthday</span>
+                </button>
+                <button class="filter-pill pill-vip" data-category="charter">
+                    <span class="pill-icon">💎</span>
+                    <span data-translate="filter_vip">VİP Charter</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- POPÜLER LÜKS YAT KİRALAMA & DENEYİMLER (Görsel 2) -->
+    <section id="popular-yachts" class="popular-yachts-section">
+        <div class="popular-yachts-container">
+            <div class="section-title-wrap">
+                <span class="section-tag" data-translate="popular_yachts_tag">ALANYA VİP YACHTS</span>
+                <h2 class="section-heading-dark" data-translate="popular_yachts_title">Private Yacht Rental in Alanya Most Popular Luxury Yacht Experience</h2>
+                <div class="title-accent-line"></div>
+            </div>
+
+            <div class="popular-yachts-grid" id="popular-yachts-grid">
+                <!-- Yat Kartı 1: Sabah Turu & Koylar Keşfi -->
+                <div class="luxury-yacht-card" data-category="morning">
+                    <div class="yacht-card-slider" data-slider="yacht1">
+                        <div class="slider-track">
+                            <img src="GÖRSELLER/caves-1.jpg" alt="Alanya Coast & Caves" class="slide-img active">
+                            <img src="GÖRSELLER/G9.jpg" alt="Infinity Yacht Sea" class="slide-img">
+                            <img src="GÖRSELLER/G6.jpg" alt="Alanya Luxury Deck" class="slide-img">
+                            <img src="GÖRSELLER/caves-2.jpg" alt="Alanya Blue Waters" class="slide-img">
+                        </div>
+                        <div class="slider-dots">
+                            <span class="dot active" data-idx="0"></span>
+                            <span class="dot" data-idx="1"></span>
+                            <span class="dot" data-idx="2"></span>
+                            <span class="dot" data-idx="3"></span>
+                        </div>
+                        <div class="floating-title-pill">
+                            <span data-translate="card1_badge_title">ALANYA KOYLARI & MAĞARALARI KEŞFİ (SABAH TURU)...</span>
+                        </div>
+                    </div>
+
+                    <div class="yacht-card-content">
+                        <!-- Özellik Rozetleri (Pills) -->
+                        <div class="features-pill-row">
+                            <span class="feature-pill"><i class="fas fa-utensils"></i> <span data-translate="pill_food_inc">Standart Menü Dahil</span></span>
+                            <span class="feature-pill"><i class="fas fa-wine-glass"></i> <span data-translate="pill_drinks_inc">Alkolsüz İçecekler Dahil</span></span>
+                            <span class="feature-pill"><i class="fas fa-champagne-glasses"></i> <span data-translate="pill_alcohol_allowed">Alkol Getirebilirsiniz</span></span>
+                            <span class="feature-pill"><i class="fas fa-van-shuttle"></i> <span data-translate="pill_transfer_extra">Transfer Ekstra</span></span>
+                        </div>
+
+                        <!-- 3 Kolonlu Özet Şeridi -->
+                        <div class="spec-summary-strip">
+                            <div class="spec-col">
+                                <span class="spec-col-label" data-translate="spec_start_from">Başlangıç (6 Kişi)</span>
+                                <strong class="spec-col-val price-val">€400</strong>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-col-label" data-translate="spec_capacity">Kapasite</span>
+                                <strong class="spec-col-val">Maks. 12 Pax</strong>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-col-label" data-translate="spec_hour">Süre</span>
+                                <strong class="spec-col-val">4 Saat</strong>
+                            </div>
+                        </div>
+
+                        <!-- Google Puanı -->
+                        <div class="google-rating-bar">
+                            <div class="stars-row">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-score">4.9</span>
+                            <span class="review-count">(74)</span>
+                            <span class="google-badge"><i class="fab fa-google"></i> Google</span>
+                        </div>
+
+                        <!-- İkili Aksiyon Butonları -->
+                        <div class="card-action-row">
+                            <a href="https://wa.me/905558082727?text=Merhaba,%20Alanya%20Sabah%20Yat%20Turu%20(4%20Saat%20-%20400€)%20hakkında%20bilgi%20ve%20rezervasyon%20almak%20istiyorum." class="btn-card-whatsapp wa-link" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                <span data-translate="btn_chat_wa">WhatsApp'tan Yaz</span>
+                            </a>
+                            <a href="tur-detay.html?tur=sabah" class="btn-card-details">
+                                <i class="fas fa-info-circle"></i>
+                                <span data-translate="btn_details_view">Detayları Gör</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yat Kartı 2: Günlük Özel Yat Kiralama -->
+                <div class="luxury-yacht-card" data-category="day">
+                    <div class="yacht-card-slider" data-slider="yacht2">
+                        <div class="slider-track">
+                            <img src="GÖRSELLER/caves-3.jpg" alt="Alanya Daily Private Yacht Rental" class="slide-img active">
+                            <img src="GÖRSELLER/G5.jpg" alt="Alanya Boat Cruise" class="slide-img">
+                            <img src="GÖRSELLER/G9.jpg" alt="Luxury Deck View" class="slide-img">
+                            <img src="GÖRSELLER/caves-6.jpg" alt="Alanya Swimming Spot" class="slide-img">
+                        </div>
+                        <div class="slider-dots">
+                            <span class="dot active" data-idx="0"></span>
+                            <span class="dot" data-idx="1"></span>
+                            <span class="dot" data-idx="2"></span>
+                            <span class="dot" data-idx="3"></span>
+                        </div>
+                        <div class="floating-title-pill">
+                            <span data-translate="card2_badge_title">ALANYA GÜNLÜK ÖZEL YAT KİRALAMA DENEYİMİ...</span>
+                        </div>
+                    </div>
+
+                    <div class="yacht-card-content">
+                        <div class="features-pill-row">
+                            <span class="feature-pill"><i class="fas fa-fire-burner"></i> <span data-translate="pill_bbq_inc">Barbekü Menü Dahil</span></span>
+                            <span class="feature-pill"><i class="fas fa-wine-glass"></i> <span data-translate="pill_drinks_inc">Alkolsüz İçecekler Dahil</span></span>
+                            <span class="feature-pill"><i class="fas fa-champagne-glasses"></i> <span data-translate="pill_alcohol_allowed">Alkol Getirebilirsiniz</span></span>
+                            <span class="feature-pill"><i class="fas fa-van-shuttle"></i> <span data-translate="pill_transfer_extra">Transfer Ekstra</span></span>
+                        </div>
+
+                        <div class="spec-summary-strip">
+                            <div class="spec-col">
+                                <span class="spec-col-label" data-translate="spec_start_from">Başlangıç (6 Kişi)</span>
+                                <strong class="spec-col-val price-val">€600</strong>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-col-label" data-translate="spec_capacity">Kapasite</span>
+                                <strong class="spec-col-val">Maks. 12 Pax</strong>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-col-label" data-translate="spec_hour">Süre</span>
+                                <strong class="spec-col-val">6 Saat</strong>
+                            </div>
+                        </div>
+
+                        <div class="google-rating-bar">
+                            <div class="stars-row">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-score">4.9</span>
+                            <span class="review-count">(98)</span>
+                            <span class="google-badge"><i class="fab fa-google"></i> Google</span>
+                        </div>
+
+                        <div class="card-action-row">
+                            <a href="https://wa.me/905558082727?text=Merhaba,%20Alanya%20Günlük%20Özel%20Yat%20Kiralama%20(6%20Saat%20-%20600€)%20hakkında%20bilgi%20ve%20rezervasyon%20almak%20istiyorum." class="btn-card-whatsapp wa-link" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                <span data-translate="btn_chat_wa">WhatsApp'tan Yaz</span>
+                            </a>
+                            <a href="tur-detay.html?tur=gunluk" class="btn-card-details">
+                                <i class="fas fa-info-circle"></i>
+                                <span data-translate="btn_details_view">Detayları Gör</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yat Kartı 3: Gün Batımı Turu -->
+                <div class="luxury-yacht-card" data-category="sunset">
+                    <div class="yacht-card-slider" data-slider="yacht3">
+                        <div class="slider-track">
+                            <img src="GÖRSELLER/magara.jpg" alt="Alanya Luxury Sunset Cruise" class="slide-img active">
+                            <img src="GÖRSELLER/G11.jpg" alt="Infinity Sunset Deck" class="slide-img">
+                            <img src="GÖRSELLER/G8.jpg" alt="Romantic Sunset Tour" class="slide-img">
+                            <img src="GÖRSELLER/caves-4.jpg" alt="Sunset Caves" class="slide-img">
+                        </div>
+                        <div class="slider-dots">
+                            <span class="dot active" data-idx="0"></span>
+                            <span class="dot" data-idx="1"></span>
+                            <span class="dot" data-idx="2"></span>
+                            <span class="dot" data-idx="3"></span>
+                        </div>
+                        <div class="floating-title-pill">
+                            <span data-translate="card3_badge_title">ALANYA LÜKS GÜN BATIMI & YÜZME TURU...</span>
+                        </div>
+                    </div>
+
+                    <div class="yacht-card-content">
+                        <div class="features-pill-row">
+                            <span class="feature-pill"><i class="fas fa-utensils"></i> <span data-translate="pill_dinner_inc">Akşam Yemeği Dahil</span></span>
+                            <span class="feature-pill"><i class="fas fa-wine-glass"></i> <span data-translate="pill_drinks_inc">Alkolsüz İçecekler Dahil</span></span>
+                            <span class="feature-pill"><i class="fas fa-champagne-glasses"></i> <span data-translate="pill_alcohol_allowed">Alkol Getirebilirsiniz</span></span>
+                            <span class="feature-pill"><i class="fas fa-van-shuttle"></i> <span data-translate="pill_transfer_extra">Transfer Ekstra</span></span>
+                        </div>
+
+                        <div class="spec-summary-strip">
+                            <div class="spec-col">
+                                <span class="spec-col-label" data-translate="spec_start_from">Başlangıç (6 Kişi)</span>
+                                <strong class="spec-col-val price-val">€400</strong>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-col-label" data-translate="spec_capacity">Kapasite</span>
+                                <strong class="spec-col-val">Maks. 12 Pax</strong>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-col-label" data-translate="spec_hour">Süre</span>
+                                <strong class="spec-col-val">4 Saat</strong>
+                            </div>
+                        </div>
+
+                        <div class="google-rating-bar">
+                            <div class="stars-row">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
+                            </div>
+                            <span class="rating-score">4.9</span>
+                            <span class="review-count">(126)</span>
+                            <span class="google-badge"><i class="fab fa-google"></i> Google</span>
+                        </div>
+
+                        <div class="card-action-row">
+                            <a href="https://wa.me/905558082727?text=Merhaba,%20Alanya%20Gün%20Batımı%20Yat%20Turu%20(4%20Saat%20-%20400€)%20hakkında%20bilgi%20ve%20rezervasyon%20almak%20istiyorum." class="btn-card-whatsapp wa-link" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                <span data-translate="btn_chat_wa">WhatsApp'tan Yaz</span>
+                            </a>
+                            <a href="tur-detay.html?tur=gunbatimi" class="btn-card-details">
+                                <i class="fas fa-info-circle"></i>
+                                <span data-translate="btn_details_view">Detayları Gör</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yat Kartı 4: Özel VİP Kiralama & Etkinlik -->
+                <div class="luxury-yacht-card" data-category="charter">
+                    <div class="yacht-card-slider" data-slider="yacht4">
+                        <div class="slider-track">
+                            <img src="GÖRSELLER/G10.jpg" alt="Alanya Exclusive Private Yacht Experience" class="slide-img active">
+                            <img src="GÖRSELLER/G11.jpg" alt="Infinity Yacht Interior" class="slide-img">
+                            <img src="GÖRSELLER/G3.PNG" alt="Luxury Yacht Flybridge" class="slide-img">
+                            <img src="GÖRSELLER/G4.jpeg" alt="Exclusive Charter" class="slide-img">
+                        </div>
+                        <div class="slider-dots">
+                            <span class="dot active" data-idx="0"></span>
+                            <span class="dot" data-idx="1"></span>
+                            <span class="dot" data-idx="2"></span>
+                            <span class="dot" data-idx="3"></span>
+                        </div>
+                        <div class="floating-title-pill">
+                            <span data-translate="card4_badge_title">ALANYA EXCLUSIVE ÖZEL VİP YAT KİRALAMA...</span>
+                        </div>
+                    </div>
+
+                    <div class="yacht-card-content">
+                        <div class="features-pill-row">
+                            <span class="feature-pill"><i class="fas fa-utensils"></i> <span data-translate="pill_4h_food_inc">4+ Saatte Yemek Dahil</span></span>
+                            <span class="feature-pill"><i class="fas fa-wine-glass"></i> <span data-translate="pill_drinks_inc">Alkolsüz İçecekler Dahil</span></span>
+                            <span class="feature-pill"><i class="fas fa-champagne-glasses"></i> <span data-translate="pill_alcohol_allowed">Alkol Getirebilirsiniz</span></span>
+                            <span class="feature-pill"><i class="fas fa-van-shuttle"></i> <span data-translate="pill_transfer_extra">Transfer Ekstra</span></span>
+                        </div>
+
+                        <div class="spec-summary-strip">
+                            <div class="spec-col">
+                                <span class="spec-col-label" data-translate="spec_start_from">Saatlik Ücret</span>
+                                <strong class="spec-col-val price-val">€100 / Saat</strong>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-col-label" data-translate="spec_capacity">Kapasite</span>
+                                <strong class="spec-col-val">Maks. 12 Pax</strong>
+                            </div>
+                            <div class="spec-col">
+                                <span class="spec-col-label" data-translate="spec_hour">Süre</span>
+                                <strong class="spec-col-val">Esnek (3-8 Saat)</strong>
+                            </div>
+                        </div>
+
+                        <div class="google-rating-bar">
+                            <div class="stars-row">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-score">5.0</span>
+                            <span class="review-count">(142)</span>
+                            <span class="google-badge"><i class="fab fa-google"></i> Google</span>
+                        </div>
+
+                        <div class="card-action-row">
+                            <a href="https://wa.me/905558082727?text=Merhaba,%20Alanya%20Özel%20VİP%20Yat%20Kiralama%20(Saatlik%20100€)%20hakkında%20bilgi%20ve%20rezervasyon%20almak%20istiyorum." class="btn-card-whatsapp wa-link" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                <span data-translate="btn_chat_wa">WhatsApp'tan Yaz</span>
+                            </a>
+                            <a href="tur-detay.html?tur=kiralama" class="btn-card-details">
+                                <i class="fas fa-info-circle"></i>
+                                <span data-translate="btn_details_view">Detayları Gör</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NELER DAHİL? (Görsel 1) -->
+            <div class="inclusions-overview-wrap">
+                <div class="inclusions-header text-center">
+                    <span class="section-tag-gold" data-translate="inc_tag">ŞEFFAF HİZMET</span>
+                    <h3 class="inclusions-title" data-translate="inc_section_title">Turlarımıza Neler Dahil?</h3>
+                    <div class="title-accent-line center-accent"></div>
+                </div>
+
+                <div class="inclusions-cards-grid">
+                    <!-- Yemek -->
+                    <div class="inclusion-status-card">
+                        <div class="inc-icon-box bg-food">
+                            <i class="fas fa-utensils"></i>
+                            <span class="status-badge check"><i class="fas fa-check"></i></span>
+                        </div>
+                        <span class="inc-label" data-translate="inc_food_label">YEMEK</span>
+                        <strong class="inc-status included" data-translate="inc_food_status">Dahil (4+ Saat)</strong>
+                        <small class="inc-hint" data-translate="inc_food_hint">3 saat ve altı yemeksizdir</small>
+                    </div>
+
+                    <!-- Alkolsüz İçecekler -->
+                    <div class="inclusion-status-card">
+                        <div class="inc-icon-box bg-drinks">
+                            <i class="fas fa-glass-water"></i>
+                            <span class="status-badge check"><i class="fas fa-check"></i></span>
+                        </div>
+                        <span class="inc-label" data-translate="inc_drinks_label">ALKOLSÜZ İÇECEKLER</span>
+                        <strong class="inc-status included" data-translate="inc_drinks_status">Dahil</strong>
+                        <small class="inc-hint" data-translate="inc_drinks_hint">Sınırsız soğuk & sıcak</small>
+                    </div>
+
+                    <!-- Alkollü İçecekler -->
+                    <div class="inclusion-status-card">
+                        <div class="inc-icon-box bg-cocktail">
+                            <i class="fas fa-martini-glass"></i>
+                            <span class="status-badge cross"><i class="fas fa-xmark"></i></span>
+                        </div>
+                        <span class="inc-label" data-translate="inc_alcohol_label">ALKOLLÜ İÇECEKLER</span>
+                        <strong class="inc-status excluded" data-translate="inc_alcohol_status">Hariç</strong>
+                        <small class="inc-hint" data-translate="inc_alcohol_hint">Menüye dahil değildir</small>
+                    </div>
+
+                    <!-- Alkol Getirmek -->
+                    <div class="inclusion-status-card">
+                        <div class="inc-icon-box bg-bring-alcohol">
+                            <i class="fas fa-wine-bottle"></i>
+                            <span class="status-badge check"><i class="fas fa-check"></i></span>
+                        </div>
+                        <span class="inc-label" data-translate="inc_bring_label">ALKOL GETİRMEK</span>
+                        <strong class="inc-status included" data-translate="inc_bring_status">İzin Verilir</strong>
+                        <small class="inc-hint" data-translate="inc_bring_hint">Ücretsiz servis edilir</small>
+                    </div>
+
+                    <!-- Dekorasyon -->
+                    <div class="inclusion-status-card">
+                        <div class="inc-icon-box bg-decor">
+                            <i class="fas fa-wand-magic-sparkles"></i>
+                            <span class="status-badge cross"><i class="fas fa-xmark"></i></span>
+                        </div>
+                        <span class="inc-label" data-translate="inc_decor_label">DEKORASYON</span>
+                        <strong class="inc-status excluded" data-translate="inc_decor_status">Hariç / Opsiyonel</strong>
+                        <small class="inc-hint" data-translate="inc_decor_hint">Özel kutlama süslemesi</small>
+                    </div>
+
+                    <!-- Transfer -->
+                    <div class="inclusion-status-card">
+                        <div class="inc-icon-box bg-transfer">
+                            <i class="fas fa-van-shuttle"></i>
+                            <span class="status-badge cross"><i class="fas fa-xmark"></i></span>
+                        </div>
+                        <span class="inc-label" data-translate="inc_transfer_label">TRANSFER</span>
+                        <strong class="inc-status excluded" data-translate="inc_transfer_status">Hariç / Ekstra</strong>
+                        <small class="inc-hint" data-translate="inc_transfer_hint">VİP Vito otel transferi</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CANLI FİYAT HESAPLAMA (Görsel 1) -->
+            <div class="price-calc-container-wrap">
+                <div class="price-calc-box">
+                    <div class="calc-header-strip">
+                        <div class="calc-title-side">
+                            <i class="fas fa-calculator"></i>
+                            <h3 data-translate="calc_title">FİYATINI HESAPLA</h3>
+                        </div>
+                        <span class="calc-tagline" data-translate="calc_tagline">Şeffaf & Anlık Fiyatlandırma</span>
+                    </div>
+
+                    <div class="calc-body-grid">
+                        <!-- Kişi Sayısı Seçimi -->
+                        <div class="calc-input-group">
+                            <label><i class="fas fa-user-group"></i> <span data-translate="calc_guests_label">Kişi Sayısı (Maks. 12)</span></label>
+                            <select id="calc-guests-select" class="calc-select">
+                                <option value="1">1 Kişi</option>
+                                <option value="2">2 Kişi</option>
+                                <option value="3">3 Kişi</option>
+                                <option value="4">4 Kişi</option>
+                                <option value="5">5 Kişi</option>
+                                <option value="6" selected>6 Kişi (Temel Paket)</option>
+                                <option value="7">7 Kişi (+25€)</option>
+                                <option value="8">8 Kişi (+50€)</option>
+                                <option value="9">9 Kişi (+75€)</option>
+                                <option value="10">10 Kişi (+100€)</option>
+                                <option value="11">11 Kişi (+125€)</option>
+                                <option value="12">12 Kişi (Maksimum 12 Kişi +150€)</option>
+                            </select>
+                        </div>
+
+                        <!-- Tur Süresi Seçimi -->
+                        <div class="calc-input-group">
+                            <label><i class="far fa-clock"></i> <span data-translate="calc_duration_label">Tur Süresi</span></label>
+                            <select id="calc-duration-select" class="calc-select">
+                                <option value="3">3 Saat (Yemeksiz) - 300 €</option>
+                                <option value="4" selected>4 Saat (Standart Yemekli) - 400 €</option>
+                                <option value="5">5 Saat (Standart Yemekli) - 500 €</option>
+                                <option value="6">6 Saat (Standart Yemekli) - 600 €</option>
+                                <option value="8">8 Saat (Tam Gün Yemekli) - 800 €</option>
+                            </select>
+                        </div>
+
+                        <!-- Transfer İsteği -->
+                        <div class="calc-input-group">
+                            <label><i class="fas fa-van-shuttle"></i> <span data-translate="calc_transfer_label">Otel Transferi</span></label>
+                            <select id="calc-transfer-select" class="calc-select">
+                                <option value="none" selected data-translate="calc_transfer_no">Transfer İstemiyorum</option>
+                                <option value="vito" data-translate="calc_transfer_yes">VİP Mercedes Vito Transfer İstiyorum (Ekstra)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Hesaplanan Tutar ve Bilgi Çubuğu -->
+                    <div class="calc-result-bar">
+                        <div class="calc-price-summary">
+                            <span class="calc-total-label" data-translate="calc_total_label">Tahmini Toplam Tutar:</span>
+                            <div class="calc-price-display">
+                                <span class="calc-currency">€</span>
+                                <strong id="calc-total-price">400</strong>
+                            </div>
+                            <span class="calc-price-note" id="calc-price-note" data-translate="calc_note_default">6 kişiye kadar temel fiyattır. 4 saat ve üzeri turlara lezzetli standart yemek menüsü dahildir.</span>
+                        </div>
+
+                        <a id="calc-whatsapp-btn" href="https://wa.me/905558082727?text=Merhaba,%20Infinity%20VİP%20Yacht%20için%20hesapladığım%20tur%20detayları:%0A👥%20Kişi%20Sayısı:%206%20Kişi%0A⏱️%20Süre:%204%20Saat%20(Standart%20Yemekli)%0A🚐%20Transfer:%20İstemiyorum%0A💰%20Tahmini%20Tutar:%20400€%0ARezervasyon%20yapmak%20istiyorum." class="btn-calc-book wa-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            <span data-translate="calc_book_btn">Bu Fiyatla Rezervasyon Yap</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÖZEL HİZMETLER & VİP DENEYİMLER (Görsel 1 "FOCUS YACHT / Luxury Yachts") -->
+    <section id="special-services" class="special-services-section">
+        <div class="special-services-container">
+            <div class="section-title-wrap text-center">
+                <span class="section-tag-gold" data-translate="specials_tag">FOCUS YACHT</span>
+                <h2 class="section-heading-dark">
+                    <span data-translate="specials_title_part1">Luxury</span>
+                    <span class="text-gold" data-translate="specials_title_part2">Yachts & Experiences</span>
+                </h2>
+                <p class="section-text-muted" data-translate="specials_desc">
+                    Alanya tatilinizi kusursuz kılacak özel transfer, doğum günü ve heyecan dolu su sporları deneyimleri.
+                </p>
+            </div>
+
+            <div class="special-services-grid">
+                <!-- Servis Kartı 1: VİP Transfer -->
+                <div class="special-service-card">
+                    <div class="service-card-media">
+                        <img src="GÖRSELLER/transfer-vip.jpg" alt="Private Transfer from Hotel to Yacht" loading="lazy">
+                        <div class="service-rating-badge">
+                            <i class="fas fa-star"></i>
+                            <strong>4.9</strong>
+                            <span>• 140+ Reviews</span>
+                        </div>
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-card-title" data-translate="service1_title">Private Transfer from Hotel to Yacht</h3>
+                        
+                        <div class="service-badges-row">
+                            <span class="badge-tag" data-translate="badge_hotel_transfer">Hotel Transfer</span>
+                            <span class="badge-tag" data-translate="badge_free_cancel">Free Cancel</span>
+                            <span class="badge-tag" data-translate="badge_fast_booking">Fast Booking</span>
+                        </div>
+
+                        <a href="https://wa.me/905558082727?text=Merhaba,%20Otelden%20Yata%20VİP%20Transfer%20hizmeti%20hakkında%20bilgi%20ve%20fiyat%20almak%20istiyorum." class="btn-orange-cta wa-link" target="_blank">
+                            <i class="fas fa-van-shuttle"></i>
+                            <span data-translate="service1_btn">Private Transfer from Hotel to Yacht</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servis Kartı 2: Doğum Günü & Özel Kutlama -->
+                <div class="special-service-card" data-category="birthday">
+                    <div class="service-card-media">
+                        <img src="GÖRSELLER/birthday-yacht.jpg" alt="Birthday on a Yacht" loading="lazy">
+                        <div class="service-rating-badge">
+                            <i class="fas fa-star"></i>
+                            <strong>4.9</strong>
+                            <span>• 185+ Reviews</span>
+                        </div>
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-card-title" data-translate="service2_title">Birthday on a Yacht</h3>
+                        
+                        <div class="service-badges-row">
+                            <span class="badge-tag" data-translate="badge_cake_decor">Cake & Decor</span>
+                            <span class="badge-tag" data-translate="badge_free_cancel">Free Cancel</span>
+                            <span class="badge-tag" data-translate="badge_fast_booking">Fast Booking</span>
+                        </div>
+
+                        <a href="https://wa.me/905558082727?text=Merhaba,%20Yatta%20Doğum%20Günü%20Kutlaması%20ve%20Süsleme%20paketi%20hakkında%20bilgi%20almak%20istiyorum." class="btn-orange-cta wa-link" target="_blank">
+                            <i class="fas fa-cake-candles"></i>
+                            <span data-translate="service2_btn">Birthday on a Yacht</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servis Kartı 3: Su Sporları -->
+                <div class="special-service-card">
+                    <div class="service-card-media">
+                        <img src="GÖRSELLER/water-sports.jpg" alt="Alanya Water Sport" loading="lazy">
+                        <div class="service-rating-badge">
+                            <i class="fas fa-star"></i>
+                            <strong>4.9</strong>
+                            <span>• 210+ Reviews</span>
+                        </div>
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-card-title" data-translate="service3_title">Alanya Water Sport</h3>
+                        
+                        <div class="service-badges-row">
+                            <span class="badge-tag" data-translate="badge_watersport">Parasail & JetSki</span>
+                            <span class="badge-tag" data-translate="badge_safety_pro">Safety & Insured</span>
+                            <span class="badge-tag" data-translate="badge_fast_booking">Fast Booking</span>
+                        </div>
+
+                        <a href="https://wa.me/905558082727?text=Merhaba,%20Alanya%20Su%20Sporları%20(Parasailing,%20Jet%20Ski)%20hakkında%20bilgi%20ve%20rezervasyon%20almak%20istiyorum." class="btn-orange-cta wa-link" target="_blank">
+                            <i class="fas fa-person-swimming"></i>
+                            <span data-translate="service3_btn">Alanya Water Sport</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEDEN BİZ? BÖLÜMÜ (Görsel 1'deki Lüks Koyu Lacivert & Altın Tasarım) -->
+    <section id="why-us" class="why-us-section">
+        <div class="why-us-container">
+            <!-- Sol Kolon -->
+            <div class="why-us-left">
+                <span class="section-tag" data-translate="why_tag">NEDEN BİZ?</span>
+                <h2 class="section-heading-dark" data-translate="why_title">Alanya’nın En İyi Yat Kiralama Deneyimi</h2>
+                <p class="section-text-dark" data-translate="why_desc">
+                    Misafirlerimize konfor, güvenlik ve özel hizmet anlayışıyla eşsiz bir deniz deneyimi sunuyoruz.
+                </p>
+                <a href="#yacht" class="btn-outline-gold">
+                    <span data-translate="why_btn">HAKKIMIZDA</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- Sağ Kolon (4'lü Lüks Cam Kart Grid) -->
+            <div class="why-us-grid">
+                <!-- Kart 1 -->
+                <div class="luxury-card">
+                    <div class="card-icon-gold">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M6 44L14 28H50L58 44H6Z"/>
+                            <path d="M18 28L24 16H40L46 28"/>
+                            <path d="M32 8V16"/>
+                            <circle cx="24" cy="36" r="3"/>
+                            <circle cx="32" cy="36" r="3"/>
+                            <circle cx="40" cy="36" r="3"/>
+                            <path d="M2 52C10 56 22 56 32 52C42 48 54 48 62 52"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title-gold" data-translate="why_card1_title">LÜKS YATLAR</h3>
+                    <p class="card-desc-gold" data-translate="why_card1_desc">Bakımlı, modern ve konforlu yatlarımız ile hayalinizdeki deneyimi yaşayın.</p>
+                </div>
+
+                <!-- Kart 2 -->
+                <div class="luxury-card">
+                    <div class="card-icon-gold">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="32" cy="24" r="10"/>
+                            <path d="M16 20C16 14 23 10 32 10C41 10 48 14 48 20H16Z"/>
+                            <path d="M14 20H50L54 26H10L14 20Z"/>
+                            <path d="M12 54C12 42 21 38 32 38C43 38 52 42 52 54"/>
+                            <path d="M32 38V48"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title-gold" data-translate="why_card2_title">PROFESYONEL EKİP</h3>
+                    <p class="card-desc-gold" data-translate="why_card2_desc">Deneyimli ve güler yüzlü ekibimiz ile her anınızda yanınızdayız.</p>
+                </div>
+
+                <!-- Kart 3 -->
+                <div class="luxury-card">
+                    <div class="card-icon-gold">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M12 14L24 8L40 16L52 10V46L40 52L24 44L12 50V14Z"/>
+                            <path d="M24 8V44"/>
+                            <path d="M40 16V52"/>
+                            <circle cx="32" cy="28" r="5"/>
+                            <path d="M32 33V40"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title-gold" data-translate="why_card3_title">ÖZEL TUR ROTALARI</h3>
+                    <p class="card-desc-gold" data-translate="why_card3_desc">Kişiye özel tur seçenekleri ile Alanya'nın saklı cennetlerini keşfedin.</p>
+                </div>
+
+                <!-- Kart 4 -->
+                <div class="luxury-card">
+                    <div class="card-icon-gold">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M32 6L14 14V28C14 42 22 52 32 58C42 52 50 42 50 28V14L32 6Z"/>
+                            <path d="M24 32L30 38L42 24"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title-gold" data-translate="why_card4_title">GÜVENLİ VE KONFORLU</h3>
+                    <p class="card-desc-gold" data-translate="why_card4_desc">Güvenliğiniz ve konforunuz bizim için her şeyden önce gelir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TURLARIMIZ / EŞSİZ ROTALAR BÖLÜMÜ (Görsel 2'deki Manzaralı Tur Kartları) -->
+    <section id="tours" class="tours-section">
+        <div class="tours-bg-backdrop"></div>
+        <div class="tours-container">
+            <!-- Üst/Sol Başlık Alanı -->
+            <div class="tours-header-row">
+                <div class="tours-header-left">
+                    <span class="section-tag" data-translate="tours_tag">TURLARIMIZ</span>
+                    <h2 class="section-heading-dark" data-translate="tours_title">Eşsiz Rotalar, Unutulmaz Anlar</h2>
+                    <p class="section-text-dark" data-translate="tours_desc">
+                        Alanya'nın birbirinden özel koylarını keşfetmek için hazırladığımız tur seçeneklerimizi inceleyin.
+                    </p>
+                </div>
+                <div class="tours-header-right">
+                    <a href="tur-detay.html?tur=sabah" class="btn-outline-gold">
+                        <span data-translate="tours_all_btn">TÜM TURLARI GÖR</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tur Kartları Grid -->
+            <div class="tours-cards-grid">
+                <!-- Tur 1: Kleopatra Koyu / Sabah Turu -->
+                <a href="tur-detay.html?tur=sabah" class="tour-route-card">
+                    <div class="tour-img-box">
+                        <img src="GÖRSELLER/caves-1.jpg" alt="Kleopatra Koyu Turu" loading="lazy">
+                        <div class="tour-overlay-gradient"></div>
+                    </div>
+                    <div class="tour-info-bottom">
+                        <div class="tour-location-badge">
+                            <i class="fas fa-location-dot"></i>
+                            <span data-translate="tour1_name">Kleopatra Koyu</span>
+                        </div>
+                        <div class="tour-duration-badge">
+                            <i class="far fa-clock"></i>
+                            <span data-translate="tour1_duration">Yarım Günlük Tur</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Tur 2: Ulaş Koyu / Günlük Tur -->
+                <a href="tur-detay.html?tur=gunluk" class="tour-route-card">
+                    <div class="tour-img-box">
+                        <img src="GÖRSELLER/caves-3.jpg" alt="Ulaş Koyu Turu" loading="lazy">
+                        <div class="tour-overlay-gradient"></div>
+                    </div>
+                    <div class="tour-info-bottom">
+                        <div class="tour-location-badge">
+                            <i class="fas fa-location-dot"></i>
+                            <span data-translate="tour2_name">Ulaş Koyu</span>
+                        </div>
+                        <div class="tour-duration-badge">
+                            <i class="far fa-clock"></i>
+                            <span data-translate="tour2_duration">Yarım Günlük Tur</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Tur 3: Fosforlu Mağara / Gün Batımı -->
+                <a href="tur-detay.html?tur=gunbatimi" class="tour-route-card">
+                    <div class="tour-img-box">
+                        <img src="GÖRSELLER/magara.jpg" alt="Fosforlu Mağara Turu" loading="lazy">
+                        <div class="tour-overlay-gradient"></div>
+                    </div>
+                    <div class="tour-info-bottom">
+                        <div class="tour-location-badge">
+                            <i class="fas fa-location-dot"></i>
+                            <span data-translate="tour3_name">Fosforlu Mağara</span>
+                        </div>
+                        <div class="tour-duration-badge">
+                            <i class="far fa-clock"></i>
+                            <span data-translate="tour3_duration">Gün Batımı Turu</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Tur 4: Dimçayı & Koylar / Özel Kiralama -->
+                <a href="tur-detay.html?tur=kiralama" class="tour-route-card">
+                    <div class="tour-img-box">
+                        <img src="GÖRSELLER/G10.jpg" alt="Dimçayı & Koylar Turu" loading="lazy">
+                        <div class="tour-overlay-gradient"></div>
+                    </div>
+                    <div class="tour-info-bottom">
+                        <div class="tour-location-badge">
+                            <i class="fas fa-location-dot"></i>
+                            <span data-translate="tour4_name">Dimçayı & Koylar</span>
+                        </div>
+                        <div class="tour-duration-badge">
+                            <i class="far fa-clock"></i>
+                            <span data-translate="tour4_duration">Tam Günlük VİP Tur</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIZLI REZERVASYON FORMU (Görsel 2'deki Beyaz Yüzen Kart) -->
+    <section id="quick-booking" class="quick-booking-section">
+        <div class="quick-booking-container">
+            <div class="quick-booking-box">
+                <!-- Sol Başlık -->
+                <div class="qb-left">
+                    <span class="section-tag-gold" data-translate="qb_tag">HIZLI REZERVASYON</span>
+                    <h3 class="qb-title" data-translate="qb_title">Hayalinizdeki Yat Deneyimini Planlayın</h3>
+                    <p class="qb-desc" data-translate="qb_desc">Tarih seçin, size en uygun yatı birlikte belirleyelim.</p>
+                </div>
+
+                <!-- Sağ Form -->
+                <div class="qb-right">
+                    <div class="qb-form-row">
+                        <div class="qb-input-group">
+                            <label data-translate="qb_date_label">TARİH SEÇİN</label>
+                            <div class="input-with-icon">
+                                <input type="date" id="qb-date" placeholder="Gün / Ay / Yıl">
+                                <i class="far fa-calendar-alt"></i>
+                            </div>
+                        </div>
+
+                        <div class="qb-input-group">
+                            <label data-translate="qb_guests_label">KİŞİ SAYISI</label>
+                            <div class="input-with-icon">
+                                <select id="qb-guests">
+                                    <option value="" disabled selected data-translate="qb_guests_placeholder">Kaç Kişisiniz?</option>
+                                    <option value="1-2">1 - 2 Kişi</option>
+                                    <option value="3-5">3 - 5 Kişi</option>
+                                    <option value="6-8">6 - 8 Kişi</option>
+                                    <option value="9-12">9 - 12 Kişi</option>
+                                    <option value="12+ Özel">12+ Özel Etkinlik</option>
+                                </select>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+
+                        <button class="btn-qb-submit" id="qb-submit-btn">
+                            <span data-translate="qb_btn">YATINI SEÇ</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YATIMIZ / INFINITY YACHT BÖLÜMÜ -->
+    <section id="yacht" class="yacht-showcase-section">
+        <div class="yacht-container">
+            <div class="yacht-card-hero">
+                <div class="yacht-image-side">
+                    <img src="GÖRSELLER/G11.jpg" alt="Infinity Luxury Yacht Alanya" loading="lazy">
+                    <div class="yacht-badge-floating">
+                        <i class="fas fa-award"></i>
+                        <span>Mavi Bayrak Ödüllü</span>
+                    </div>
+                </div>
+                <div class="yacht-details-side">
+                    <span class="section-tag" data-translate="yacht_tag">PREMİUM FİLO</span>
+                    <h2 class="yacht-title" data-translate="yacht_section_title">Infinity Luxury Yacht</h2>
+                    <h4 class="yacht-subtitle" data-translate="yacht_subtitle">Alanya'nın Mavi Bayrak Ödüllü Gururu</h4>
+                    <p class="yacht-desc" data-translate="yacht_description">
+                        Infinity, lüks tasarımı, geniş güneşlenme güvertesi ve modern donanımı ile size konfor ve güvenliği bir arada sunar. VİP hizmet anlayışıyla tasarlanan yatımız, özel anlarınızı unutulmaz kılmak için her detayı düşünülerek hazırlanmıştır.
+                    </p>
+
+                    <div class="yacht-specs-grid">
+                        <div class="spec-box">
+                            <i class="fas fa-users"></i>
+                            <strong class="counter" data-count="12">12</strong>
+                            <span data-translate="feature_capacity">Kişi Kapasite</span>
+                        </div>
+                        <div class="spec-box">
+                            <i class="fas fa-crown"></i>
+                            <strong>VİP</strong>
+                            <span data-translate="feature_award">Lüks Donanım</span>
+                        </div>
+                        <div class="spec-box">
+                            <i class="fas fa-user-tie"></i>
+                            <strong>Kaptan</strong>
+                            <span data-translate="feature_speed">Profesyonel Ekip</span>
+                        </div>
+                    </div>
+
+                    <div class="yacht-cta-row">
+                        <a href="https://wa.me/905558082727?text=Merhaba,%20Infinity%20Yat%20hakkında%20bilgi%20almak%20istiyorum." class="btn-hero-primary wa-link" target="_blank">
+                            <span data-translate="booking_whatsapp_btn">WhatsApp'tan Bilgi Al</span>
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ANILAR / MİSAFİRLERİMİZİN GÖZÜNDEN BÖLÜMÜ (Görsel 2'deki Instagram Galeri) -->
+    <section id="memories" class="memories-section">
+        <div class="memories-container">
+            <div class="memories-row">
+                <!-- Sol Kolon -->
+                <div class="memories-left">
+                    <span class="section-tag" data-translate="memories_tag">ANILAR</span>
+                    <h2 class="section-heading-dark" data-translate="memories_title">Misafirlerimizin Gözünden</h2>
+                    <p class="memories-desc" data-translate="memories_desc">Bizi Instagram’da takip edin!</p>
+                    <a href="https://www.instagram.com/infinityyacht1" target="_blank" class="instagram-handle-link">
+                        <i class="fab fa-instagram"></i>
+                        <span>@infinityyacht1</span>
+                    </a>
+                </div>
+
+                <!-- Sağ Kolon (4'lü Fotoğraf Grid) -->
+                <div class="memories-gallery-grid">
+                    <div class="memory-card">
+                        <img src="ilhan foto/IMG_2724.JPEG" alt="Alanya Yat Turu Misafir Anları" loading="lazy">
+                        <div class="memory-overlay">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </div>
+                    <div class="memory-card">
+                        <img src="ilhan foto/IMG_2760.JPG.jpeg" alt="Lüks Güverte Deneyimi" loading="lazy">
+                        <div class="memory-overlay">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </div>
+                    <div class="memory-card">
+                        <img src="ilhan foto/IMG_2766.JPG.jpeg" alt="Akdeniz Berrak Suları" loading="lazy">
+                        <div class="memory-overlay">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </div>
+                    <div class="memory-card">
+                        <img src="ilhan foto/IMG_2768.JPG.jpeg" alt="Alanya Gün Batımı Turu" loading="lazy">
+                        <div class="memory-overlay">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Lüks Gece Mavisi) -->
+    <footer id="contact" class="luxury-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Kolon 1: Marka & Açıklama -->
+                <div class="footer-col brand-col">
+                    <a href="index.html" class="footer-logo">
+                        <span class="brand-title">INFINITY VİP YACHTS</span>
+                        <span class="brand-sub">ALANYA LUXURY CHARTER</span>
+                    </a>
+                    <p class="footer-brand-text" data-translate="footer_brand_desc">
+                        Alanya'nın masmavi koylarında unutulmaz anlar yaşamanız için premium yat kiralama ve özel tur hizmetleri sunuyoruz.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/infinityyacht1" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/905558082727" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="tel:+905558082727" title="Telefon"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+
+                <!-- Kolon 2: Hızlı Menü -->
+                <div class="footer-col links-col">
+                    <h4 class="footer-title" data-translate="footer_quick_links">Hızlı Bağlantılar</h4>
+                    <ul class="footer-links">
+                        <li><a href="#hero" data-translate="nav_home">Ana Sayfa</a></li>
+                        <li><a href="#tours" data-translate="nav_tours">Turlarımız</a></li>
+                        <li><a href="#yacht" data-translate="nav_yacht">Yatımız</a></li>
+                        <li><a href="#why-us" data-translate="why_tag">Neden Biz?</a></li>
+                        <li><a href="blog.html" data-translate="nav_blog">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolon 3: Turlarımız -->
+                <div class="footer-col links-col">
+                    <h4 class="footer-title" data-translate="tours_section_title">Turlarımız</h4>
+                    <ul class="footer-links">
+                        <li><a href="tur-detay.html?tur=sabah" data-translate="morning_tour_title">Sabah Turu</a></li>
+                        <li><a href="tur-detay.html?tur=gunbatimi" data-translate="sunset_tour_title">Gün Batımı Turu</a></li>
+                        <li><a href="tur-detay.html?tur=gunluk" data-translate="daily_tour_title">Günlük Tur</a></li>
+                        <li><a href="tur-detay.html?tur=kiralama" data-translate="charter_tour_title">Özel Kiralama</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolon 4: İletişim -->
+                <div class="footer-col contact-col">
+                    <h4 class="footer-title" data-translate="contact_title">İletişim</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <i class="fas fa-location-dot"></i>
+                            <span>Alanya Yat Limanı (Marina), Antalya / Türkiye</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+905558082727">+90 555 808 27 27</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/905558082727" target="_blank">+90 555 808 27 27</a>
+                        </li>
+                        <li>
+                            <i class="far fa-envelope"></i>
+                            <a href="mailto:info@alanyavipyacht.com">info@alanyavipyacht.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <p data-translate="footer_copyright">&copy; 2026 ALANYA VİP YACHTS (Infinity). Tüm hakları saklıdır.</p>
+                <div class="footer-bottom-links">
+                    <a href="sitemap.xml">Sitemap</a>
+                    <span>•</span>
+                    <a href="blog.html">Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="custom-modal-overlay">
+        <div class="modal-card modal-video-card">
+            <button class="modal-close-btn" id="close-video-modal">&times;</button>
+            <div class="video-embed-wrapper">
+                <video id="modal-video-player" controls preload="none">
+                    <source src="tour-video.mp4" type="video/mp4">
+                    Tarayıcınız video etiketini desteklemiyor.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- Çerez Bildirimi -->
+    <div id="cookie-banner" class="luxury-cookie-banner">
+        <div class="cookie-content">
+            <i class="fas fa-cookie-bite"></i>
+            <p data-translate="cookie_text">Size daha iyi ve güvenli bir deneyim sunabilmek için sitemizde çerezler kullanıyoruz.</p>
+        </div>
+        <button id="accept-cookies" class="btn-cookie-accept" data-translate="cookie_button">Kabul Et</button>
+    </div>
+
+    <!-- Yukarı Çık Butonu -->
+    <a href="#" id="back-to-top" class="back-to-top-btn" aria-label="Yukarı Çık">
+        <i class="fas fa-arrow-up"></i>
     </a>
 
+    <!-- Yüzen WhatsApp Butonu -->
+    <a href="https://wa.me/905558082727" class="whatsapp-float-pulse wa-link" target="_blank" aria-label="WhatsApp İletişim">
+        <i class="fab fa-whatsapp"></i>
+        <span class="wa-tooltip" data-translate="wa_tooltip">Hemen Mesaj Gönderin</span>
+    </a>
+
+    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>

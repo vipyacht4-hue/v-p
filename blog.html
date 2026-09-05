@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="blog_site_title">Blog | Alanya VIP Yacht</title>
-    <meta name="description" data-translate="blog_site_description" content="Alanya yat kiralama, mavi tur ve tatil rehberi blog yazıları. Alanya'nın en güzel koyları ve yat turları hakkında bilgiler.">
+    <title data-translate="blog_site_title">Blog | INFINITY VİP YACHTS</title>
+    <meta name="description" data-translate="blog_site_description" content="Alanya yat kiralama, mavi tur ve tatil rehberi blog yazıları.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
     
@@ -17,64 +17,130 @@
 </head>
 <body>
 
-    <div id="preloader"><div class="loader-logo">INFINITY YACHT</div></div>
-
-    <header id="header">
-        <a href="index.html" class="logo">INFINITY YACHT</a>
-        <nav class="navbar">
-            <a href="index.html#hero" data-translate="nav_home">Ana Sayfa</a>
-            <a href="index.html#tours" data-translate="nav_tours">Turlarımız</a>
-            <a href="index.html#yacht" data-translate="nav_yacht">Yatımız</a>
-            <a href="blog.html" data-translate="nav_blog" class="active">Blog</a>
-            <a href="index.html#contact" data-translate="nav_contact">İletişim</a>
-        </nav>
-        <div class="header-right">
-            <div class="language-switcher">
-                <a href="#" class="lang-btn" data-lang="tr"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/tr.svg" alt="Türkçe"></a>
-                <a href="#" class="lang-btn" data-lang="en"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/gb.svg" alt="English"></a>
-                <a href="#" class="lang-btn" data-lang="ru"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/ru.svg" alt="Русский"></a>
-            </div>
-            <div id="menu-bars" class="fas fa-bars"></div>
+    <!-- Yükleme Ekranı -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loader-icon"><i class="fas fa-ship"></i></div>
+            <div class="loader-logo">INFINITY VİP YACHTS</div>
+            <div class="loader-tagline" data-translate="loader_tagline">ALANYA LUXURY CHARTER</div>
+            <div class="loader-bar"><span class="loader-progress"></span></div>
         </div>
+    </div>
+
+    <!-- Header / Navigasyon -->
+    <header id="header" class="site-header scrolled">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-symbol">
+    <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Luxury Diamond Outer Ring -->
+        <circle cx="27" cy="27" r="25" stroke="url(#goldGradient)" stroke-width="1.5" stroke-dasharray="4 2" opacity="0.6"/>
+        <circle cx="27" cy="27" r="22" stroke="url(#goldGradient)" stroke-width="1" opacity="0.3"/>
+        <!-- Infinity Wave Base -->
+        <path d="M12 33C15 29 19 29 23 33C27 37 31 37 35 33C39 29 43 29 45 33" stroke="url(#goldGradient)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M15 37C18 34 22 34 25 37C28 40 32 40 36 37C39 34 41 34 43 37" stroke="url(#goldGradient)" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+        <!-- Luxury Yacht Silhouette -->
+        <path d="M14 29L27 12L40 29H14Z" fill="url(#goldGradientLight)" fill-opacity="0.15" stroke="url(#goldGradient)" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M27 12V29" stroke="url(#goldGradient)" stroke-width="1.8"/>
+        <!-- Crown Star at Top -->
+        <polygon points="27,7 28.5,10.5 32,10.5 29,12.5 30,16 27,14 24,16 25,12.5 22,10.5 25.5,10.5" fill="url(#goldGradient)"/>
+        <!-- Gradients -->
+        <defs>
+            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ecd580"/>
+                <stop offset="50%" stop-color="#d4af37"/>
+                <stop offset="100%" stop-color="#aa861b"/>
+            </linearGradient>
+            <linearGradient id="goldGradientLight" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#d4af37"/>
+            </linearGradient>
+        </defs>
+    </svg>
+</div>
+                <div class="logo-text">
+                    <span class="brand-title">INFINITY</span>
+                    <span class="brand-sub">VİP YACHTS</span>
+                </div>
+            </a>
+
+            <nav class="navbar" id="main-nav">
+                <a href="index.html#hero" class="nav-link" data-translate="nav_home">ANASAYFA</a>
+                <a href="index.html#popular-yachts" class="nav-link" data-translate="nav_yacht">YATLARIMIZ</a>
+                <a href="index.html#special-services" class="nav-link" data-translate="nav_services">HİZMETLERİMİZ</a>
+                <a href="index.html#tours" class="nav-link" data-translate="nav_tours">TURLAR</a>
+                <a href="index.html#why-us" class="nav-link" data-translate="nav_about">HAKKIMIZDA</a>
+                <a href="blog.html" class="nav-link active" data-translate="nav_blog">BLOG</a>
+                <a href="index.html#contact" class="nav-link" data-translate="nav_contact">İLETİŞİM</a>
+            </nav>
+
+            <div class="header-right">
+                <!-- Dil Seçici -->
+                <div class="language-dropdown">
+                    <button class="lang-current-btn" id="lang-menu-btn" aria-label="Dil Seçimi">
+                        <img id="current-lang-flag" src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/tr.svg" alt="TR">
+                        <span id="current-lang-code">TR</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="lang-dropdown-menu" id="lang-dropdown-menu">
+                        <a href="#" class="lang-btn" data-lang="tr"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/tr.svg" alt="Türkçe"> Türkçe</a>
+                        <a href="#" class="lang-btn" data-lang="en"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/gb.svg" alt="English"> English</a>
+                        <a href="#" class="lang-btn" data-lang="de"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/de.svg" alt="Deutsch"> Deutsch</a>
+                        <a href="#" class="lang-btn" data-lang="ru"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/ru.svg" alt="Русский"> Русский</a>
+                        <a href="#" class="lang-btn" data-lang="pl"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/pl.svg" alt="Polski"> Polski</a>
+                        <a href="#" class="lang-btn" data-lang="sv"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/se.svg" alt="Svenska"> Svenska</a>
+                        <a href="#" class="lang-btn" data-lang="no"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/no.svg" alt="Norsk"> Norsk</a>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/905558082727" class="header-icon-btn wa-link" title="WhatsApp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+                <a href="index.html#quick-booking" class="btn-header-cta" data-translate="header_cta">REZERVASYON YAP</a>
+
+                <button class="mobile-menu-toggle" id="menu-bars" aria-label="Menüyü Aç">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-nav-backdrop" id="mobile-backdrop"></div>
     </header>
 
-    <section class="tour-detail-header blog-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('GÖRSELLER/blog-vip-yacht.png');">
-        <div class="header-content">
-            <h1 data-translate="blog_page_title">Alanya VIP Yacht Blog</h1>
+    <main>
+        <section class="blog-header-section">
+            <h1 data-translate="blog_page_title">INFINITY VİP YACHTS Blog</h1>
             <p data-translate="blog_page_desc">Tatiliniz için en iyi öneriler ve yat rehberi</p>
-        </div>
-    </section>
+        </section>
 
-    <section id="blog-list" class="section-padding">
-        <div class="blog-grid" id="blog-container">
-            <!-- Blog cards will be generated by JS -->
-        </div>
-    </section>
+        <section id="blog-list">
+            <div class="blog-grid" id="blog-container">
+                <!-- Blog cards generated dynamically by JS -->
+            </div>
+        </section>
+    </main>
 
-    <footer id="contact">
-        <div class="footer-content">
-            <h3 data-translate="contact_title">Bize Ulaşın</h3>
-            <p data-translate="contact_text">Hayalinizdeki turu planlamak için bizimle iletişime geçin.</p>
-            <ul class="socials">
-                <li><a href="https://www.instagram.com/infinityyacht1" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="https://wa.me/905558082727" target="_blank" class="whatsapp-footer-link"><i class="fab fa-whatsapp"></i></a></li>
-                <li><a href="tel:+905558082727" class="phone-footer-link"><i class="fas fa-phone"></i></a></li>
-            </ul>
+    <!-- FOOTER -->
+    <footer id="contact" class="luxury-footer">
+        <div class="footer-container">
+            <div class="footer-bottom-bar" style="border-top: none; padding-top: 0;">
+                <p data-translate="footer_copyright">&copy; 2026 ALANYA VİP YACHTS (Infinity). Tüm hakları saklıdır.</p>
+                <div class="footer-bottom-links">
+                    <a href="index.html" data-translate="nav_home">Ana Sayfa</a>
+                    <span>•</span>
+                    <a href="sitemap.xml">Sitemap</a>
+                </div>
+            </div>
         </div>
-        <div class="footer-bottom"><p data-translate="footer_copyright">&copy; 2025 Alanya VIP Yacht. Tüm hakları saklıdır.</p></div>
     </footer>
-    
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/905558082727" class="whatsapp-float" target="_blank">
+
+    <!-- Yüzen WhatsApp Butonu -->
+    <a href="https://wa.me/905558082727" class="whatsapp-float-pulse wa-link" target="_blank" aria-label="WhatsApp İletişim">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script src="script.js"></script>
-    <script>
-        // Temporary script to render blogs until translation is fully loaded or integrated
-        document.addEventListener('DOMContentLoaded', () => {
-            // Function inside script.js will handle rendering the blog list based on language
-        });
-    </script>
 </body>
 </html>
