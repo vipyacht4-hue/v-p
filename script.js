@@ -1882,8 +1882,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 waTr.href = 'https://wa.me/' + yourPhoneNumber + '?text=' + encodeURIComponent(textParam);
                 waRu.href = 'https://wa.me/' + russianPhoneNumber + '?text=' + encodeURIComponent(textParam);
             } else {
-                waTr.href = 'https://wa.me/' + yourPhoneNumber;
-                waRu.href = 'https://wa.me/' + russianPhoneNumber;
+                const defaultMsg = 'Merhaba! ALANYA VİP YACHTS hakkında detaylı bilgi, müsaitlik durumu ve fiyat teklifi almak istiyorum.';
+                waTr.href = 'https://wa.me/' + yourPhoneNumber + '?text=' + encodeURIComponent(defaultMsg);
+                waRu.href = 'https://wa.me/' + russianPhoneNumber + '?text=' + encodeURIComponent('Здравствуйте! Я хочу узнать подробности и цены на аренду яхты в ALANYA VİP YACHTS.');
             }
 
             if (waOverlay) waOverlay.classList.add('active');
