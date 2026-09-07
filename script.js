@@ -2,7 +2,7 @@
 // ========================== AYARLAR VE DİL VERİLERİ ============================
 // =================================================================================
 
-const yourPhoneNumber = '905558082727'; 
+const yourPhoneNumber = '905065031856'; 
 const russianPhoneNumber = '79500384356';
 const cookieConsentName = 'infinityYachtCookieConsent';
 
@@ -1658,7 +1658,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         heroSearchBtn.addEventListener('click', function() {
             const dateVal = dateInput ? dateInput.value : 'Belirtilmedi';
-            const guestsVal = document.getElementById('hero-bar-guests') ? document.getElementById('hero-bar-guests').value : '5-8';
+            const guestsVal = document.getElementById('hero-bar-guests') ? document.getElementById('hero-bar-guests').value : '6 Kişi';
             const typeVal = document.getElementById('hero-bar-type') ? document.getElementById('hero-bar-type').value : 'Tümü';
 
             const message = 'Merhaba! INFINITY VİP YACHTS için rezervasyon/bilgi talebim var:%0A📍 Lokasyon: Alanya Limanı%0A📅 Tarih: ' + dateVal + '%0A👥 Kişi Sayısı: ' + guestsVal + '%0A🛥️ Yat / Tur Tipi: ' + typeVal + '%0AUygunluk ve fiyat bilgisi alabilir miyim?';
@@ -1680,7 +1680,7 @@ document.addEventListener('DOMContentLoaded', function() {
         qbSubmitBtn.addEventListener('click', function() {
             const dateVal = qbDateInput ? qbDateInput.value : 'Belirtilmedi';
             const guestsSelect = document.getElementById('qb-guests');
-            const guestsVal = guestsSelect && guestsSelect.value ? guestsSelect.value : '2-4 Kişi';
+            const guestsVal = guestsSelect && guestsSelect.value ? guestsSelect.value : '6 Kişi';
 
             const message = 'Merhaba, Infinity VİP Yachts turu planlamak istiyorum:%0A📅 Tarih: ' + dateVal + '%0A👥 Kişi Sayısı: ' + guestsVal + '%0ADetaylı bilgi ve müsaitlik durumu alabilir miyim?';
             
@@ -1856,7 +1856,7 @@ document.addEventListener('DOMContentLoaded', function() {
         '<h3 class="wa-modal-title"><i class="fab fa-whatsapp"></i> WhatsApp</h3>' +
         '<p class="wa-modal-desc">Lütfen iletişim numaranızı seçiniz / Please select a number:</p>' +
         '<div class="wa-modal-options">' +
-        '<a href="#" target="_blank" class="wa-modal-btn" id="wa-modal-tr"><i class="fas fa-phone-volume"></i> Türkiye (+90 555 808 27 27)</a>' +
+        '<a href="#" target="_blank" class="wa-modal-btn" id="wa-modal-tr"><i class="fas fa-phone-volume"></i> Türkiye (+90 506 503 18 56)</a>' +
         '<a href="#" target="_blank" class="wa-modal-btn" id="wa-modal-ru"><i class="fas fa-phone-volume"></i> Россия (+7 950 038-43-56)</a>' +
         '</div>' +
         '</div>' +
@@ -2041,7 +2041,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const waMsg = `Merhaba! ALANYA VİP YACHTS için hesapladığım tur detayları:%0A👥 Kişi Sayısı: ${guests} Kişi%0A⏱️ Süre: ${hours} Saat (${foodLabel})%0A🚐 Transfer: ${transferLabel}%0A💰 Tahmini Toplam Tutar: ${total}€%0AUygunluk ve rezervasyon bilgisi alabilir miyim?`;
             
             if (whatsappBtn) {
-                whatsappBtn.href = 'https://wa.me/905558082727?text=' + waMsg;
+                whatsappBtn.href = 'https://wa.me/' + yourPhoneNumber + '?text=' + waMsg;
             }
         }
 
